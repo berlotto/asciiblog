@@ -1,0 +1,44 @@
+<html>
+<head>
+
+	<title>berlotto.net</title>
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}"/>
+	<script src="{{ url_for('static', filename='/js/index.js') }}"></script>
+
+	{% block head %}
+	{% endblock %}
+</head>
+<body>
+
+
+<div id="content">
+	
+	<header>
+		<img src="{{url_for('static', filename='/img/header.png')}}">
+		<h1>berlotto.net - Blog profissional</h1>
+	</header>
+
+	{% block content %}
+	{% endblock %}
+
+</div>
+<sidebar>
+	
+	<section class="widget">
+		<header>
+			<h1>Titulo do WIdget</h1>
+		</header>
+		<p>Este widget é um item da lateral</p>
+	</section>
+
+</sidebar>
+<footer>
+	Este site é criado por Sérgio Berlotto, utiliza <a href="http://berlotto.net/asciiblog">asciiblog</a> engine.<br/>
+	HTML5 e CSS3. W3C Ready!
+</footer>
+
+
+</body>
+</html>
