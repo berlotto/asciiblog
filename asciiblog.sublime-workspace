@@ -1,0 +1,842 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"paddin",
+				"padding"
+			],
+			[
+				"array_p",
+				"array_push"
+			],
+			[
+				"cate",
+				"categoria_sugestao"
+			],
+			[
+				"content",
+				"content2"
+			],
+			[
+				"error",
+				"error_log"
+			],
+			[
+				"comment",
+				"comment_id"
+			],
+			[
+				"include",
+				"include_once"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"side",
+				"sidebar_items"
+			],
+			[
+				"render",
+				"render_template"
+			],
+			[
+				"defa",
+				"default"
+			],
+			[
+				"OAUTH",
+				"oauth_token"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "blog/models.py",
+			"settings":
+			{
+				"buffer_size": 1219,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database.py",
+			"settings":
+			{
+				"buffer_size": 451,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "asciiblog.py",
+			"settings":
+			{
+				"buffer_size": 366,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "asciiblog.cfg",
+			"settings":
+			{
+				"buffer_size": 21,
+				"line_ending": "Unix",
+				"name": "DEBUG=True"
+			}
+		},
+		{
+			"file": "templates/base.html",
+			"settings":
+			{
+				"buffer_size": 2832,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/berlotto/ConselhoDeComunicacao.txt",
+			"settings":
+			{
+				"buffer_size": 13142,
+				"line_ending": "Unix",
+				"name": "ConselhoDeComunicacao.txt"
+			}
+		},
+		{
+			"file": "templates/index.html",
+			"settings":
+			{
+				"buffer_size": 300,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/asciiblog.css",
+			"settings":
+			{
+				"buffer_size": 100,
+				"line_ending": "Unix",
+				"name": ".artigo{"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 132.0,
+		"selected_items":
+		[
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"set Syntax pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"reinden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reiden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Package Control: Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"Git Sta",
+				"Git: Status"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Git",
+				"Git: Gitk"
+			],
+			[
+				"git Sta",
+				"Git: Status"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/static/js/auth.js",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/static/js/jquery.tools.min.js",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/audience/static/js/audience.js",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/exapi/exapi.comments.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/static/css/conselho.css",
+		"/home/berlotto/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/templates/page.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/static/js/post.js",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/static/js/urls.js",
+		"/home/berlotto/insta.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/forms.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/templates/comment.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/exapi/exapi.post.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgd/wpgd.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgd/wpgd.extend.comments.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgp/wpgp.xmlrpc.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgd/wpgd.xmlrpc.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgp/wpgp.php",
+		"/home/berlotto/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgp/static/index.html",
+		"/var/www/wordpress/wp-content/plugins/exapi/exapi.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/templates/post.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/exapi/exapi.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/templates/login.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/templates/sobre.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/wp.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/conf.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/static/css/about.css",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/static/js/conselho-comunicacao.js",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/utils/__init__.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gdenv/lib/python2.7/site-packages/Jinja2-2.6-py2.7.egg/jinja2/utils.py",
+		"/var/www/wordpress/wp-content/themes/twentyeleven/functions.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/__init__.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/__init__.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/webapp.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/templates/base.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/fbauth.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/templates/signup.html",
+		"/home/berlotto/Desenvolvimento/novo_berlotto/berlottonet/berlottonet/views.py",
+		"/home/berlotto/Desenvolvimento/novo_berlotto/berlottonet/berlottonet/urls.py",
+		"/home/berlotto/Desenvolvimento/novo_berlotto/berlottonet/berlottonet/settings.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/__init__.py",
+		"/home/berlotto/Como-aprender-a-programar.txt",
+		"/home/berlotto/Desenvolvimento/novo_berlotto/berlotto_blog/settings.py",
+		"/home/berlotto/Desenvolvimento/novo_berlotto/berlotto_blog/urls.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/scripts/lasttweet",
+		"/home/berlotto/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/static/css/auth.css",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/po/pt_BR.po",
+		"/var/www/wordpress/wp-config.php",
+		"/var/www/wordpress/wp-content/plugins/nextgen-gallery-voting/ngg-voting.php",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/model.py",
+		"/home/berlotto/Desenvolvimento/url.py",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/static/imgs/facebook.gif",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/templates/profile.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/templates/index.html",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgd/COMMIT_EDITMSG.COMMIT_EDITMSG",
+		"/home/berlotto/Desenvolvimento/GabineteDigital/wpgd/wpgd.conf.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/home/berlotto/Desenvolvimento/GabineteDigital/,*.js",
+			"/home/berlotto/Desenvolvimento/GabineteDigital/",
+			"/var/www/wordpress/wp-content",
+			"/home/berlotto/Desenvolvimento/GabineteDigital/",
+			"/var/www/wordpress/wp-content",
+			"/home/berlotto/Desenvolvimento/GabineteDigital/",
+			"/home/berlotto/Desenvolvimento/GabineteDigital/wpgd",
+			"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd",
+			"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"    <div class=\"row-fluid\">\n",
+			"        </",
+			"String",
+			"Integer",
+			"Column",
+			"show_comment_form",
+			"auth",
+			"auth.success",
+			"feedbackAfterSignup",
+			"comments",
+			"\n        ",
+			"exapi_newComment",
+			"\n    ",
+			"exapi_newComment",
+			"my_user_id",
+			"private",
+			"exapi_newComment",
+			"wp_newComment",
+			"newComment",
+			".dialog",
+			"getSidebar",
+			".dialog",
+			"newComment",
+			"dumps",
+			"aweso",
+			"post",
+			"post.",
+			"'id'",
+			"sidebar-1",
+			"timezo",
+			"Em Esmeral",
+			"resp",
+			"session",
+			"SECRET_KEY",
+			"date",
+			"tele",
+			"('[a-z]*':)",
+			"'username':",
+			"('[a-z]*':)",
+			"'([a-z]*)':",
+			"u'",
+			"session",
+			"dbsess",
+			"session",
+			"social",
+			"short",
+			"exclu",
+			"signup",
+			"/auth/signup",
+			"accept_tos",
+			"Field must",
+			"Field must be",
+			"Field must be at",
+			"This field is required.",
+			"I want to receive updates by sms.",
+			"\n          ",
+			"social",
+			"sidebar",
+			"picday",
+			"    \n",
+			"picday",
+			"python",
+			"datetime",
+			"DateTime",
+			"datetime",
+			"DateTime",
+			"datetime",
+			"DateTime",
+			"datetime",
+			"DateTime",
+			"datetime",
+			"DateTime",
+			"datetime",
+			"DateTime",
+			"datetime",
+			"unicode",
+			"lsession",
+			"\n            "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\n\\1",
+			"\\1:",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "blog/models.py",
+					"settings":
+					{
+						"buffer_size": 1219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								488,
+								488
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "database.py",
+					"settings":
+					{
+						"buffer_size": 451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								189,
+								189
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "asciiblog.py",
+					"settings":
+					{
+						"buffer_size": 366,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "asciiblog.cfg",
+					"settings":
+					{
+						"buffer_size": 21,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
+							]
+						],
+						"settings":
+						{
+							"auto_name": "DEBUG=True",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/base.html",
+					"settings":
+					{
+						"buffer_size": 2832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1060,
+								1060
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/berlotto/ConselhoDeComunicacao.txt",
+					"settings":
+					{
+						"buffer_size": 13142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1361,
+								1361
+							]
+						],
+						"settings":
+						{
+							"auto_name": "ConselhoDeComunicacao.txt",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "templates/index.html",
+					"settings":
+					{
+						"buffer_size": 300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								76
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "static/css/asciiblog.css",
+					"settings":
+					{
+						"buffer_size": 100,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								97,
+								97
+							]
+						],
+						"settings":
+						{
+							"auto_name": ".artigo{",
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"tools.js",
+				"gd/gd/content/static/js/jquery.tools.min.js"
+			],
+			[
+				"login",
+				"gd/gd/auth/templates/login.html"
+			],
+			[
+				"utils.py",
+				"gd/gd/utils/__init__.py"
+			],
+			[
+				"post.js",
+				"gd/gd/content/static/js/post.js"
+			],
+			[
+				"post.",
+				"gd/gd/content/templates/post.html"
+			],
+			[
+				"page.",
+				"gd/gd/content/templates/page.html"
+			],
+			[
+				"urls",
+				"gd/gd/content/static/js/urls.js"
+			],
+			[
+				"form",
+				"gd/gd/auth/forms.py"
+			],
+			[
+				"exapi.post.php",
+				"exapi/exapi.post.php"
+			],
+			[
+				"xmlrpc",
+				"wpgd/wpgd.xmlrpc.php"
+			],
+			[
+				"wpgd.p",
+				"wpgd/wpgd.php"
+			],
+			[
+				"wpgp",
+				"wpgp/wpgp.php"
+			],
+			[
+				"conselho.css",
+				"gd/gd/content/static/css/conselho.css"
+			],
+			[
+				"con",
+				"gd/gd/conf.py"
+			],
+			[
+				"conf",
+				"gd/gd/conf.py"
+			],
+			[
+				"about.css",
+				"gd/gd/content/static/css/about.css"
+			],
+			[
+				"sobre",
+				"gd/gd/content/templates/sobre.html"
+			],
+			[
+				"auth.js",
+				"gd/gd/auth/static/js/auth.js"
+			],
+			[
+				"auth",
+				"gd/gd/auth/static/js/auth.js"
+			],
+			[
+				"__init__",
+				"gd/gd/auth/__init__.py"
+			],
+			[
+				"base",
+				"gd/gd/content/templates/base.html"
+			],
+			[
+				"exapi.php",
+				"exapi/exapi.php"
+			],
+			[
+				"post",
+				"gd/gd/content/templates/post.html"
+			],
+			[
+				"page",
+				"gd/gd/content/templates/page.html"
+			],
+			[
+				"page.ht",
+				"gd/gd/content/templates/page.html"
+			],
+			[
+				"lastt",
+				"gd/scripts/lasttweet"
+			],
+			[
+				"last",
+				"gd/scripts/lasttweet"
+			],
+			[
+				"conf.",
+				"gd/gd/conf.py"
+			],
+			[
+				"conf.p",
+				"gd/gd/conf.py"
+			],
+			[
+				"twee",
+				"gd/scripts/lasttweet"
+			],
+			[
+				"conf.py",
+				"gd/gd/conf.py"
+			],
+			[
+				"index.html",
+				"gd/gd/content/templates/index.html"
+			],
+			[
+				"post.ht",
+				"gd/gd/content/templates/post.html"
+			],
+			[
+				"wpgd.xml",
+				"wpgd/wpgd.xmlrpc.php"
+			],
+			[
+				"gd/gd/mode",
+				"gd/gd/model.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/berlotto/Desenvolvimento/GabineteDigital/gd.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true
+}

@@ -1,43 +1,101 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
 
 	<title>berlotto.net</title>
 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Site profissional sobre programação, web, python, métodos e lógica. Originado no Rio Grande do Sul.">
+	<meta name="author" content="Sérgio Berlotto Jr">
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}"/>
-	<script src="{{ url_for('static', filename='/js/index.js') }}"></script>
 
-	{% block head %}
-	{% endblock %}
-</head>
-<body>
+	<!-- jquery library + complete jquery tools -->
+	<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap-responsive.min.css') }}"/>
+	<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/asciiblog.css') }}"/>
+   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+   {% block head %}
+   {% endblock %}
+
+ </head>
+ <body>
+
+   <div class="container">
+    <div class="row">
+
+      <header class="span3">
+       <img src="{{url_for('static', filename='img/logotipo.png')}}">
+     </header>
+
+     <div  id="menu" class="span5 offset4">
+       <ul class="nav nav-tabs">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Livro</a></li>
+        <li><a href="#">Encurtador</a></li>
+        <li><a href="#">Fotos</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Projetos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
 
 
-<div id="content">
-	
-	<header>
-		<img src="{{url_for('static', filename='/img/header.png')}}">
-		<h1>berlotto.net - Blog profissional</h1>
-	</header>
+   {% block content %}
+   {% endblock %}
 
-	{% block content %}
-	{% endblock %}
+   <aside class="span3">
+
+    <section class="widget">
+     <h3>Ultimos Posts</h3>
+     <ul>
+      <li>Post 1</li>
+      <li>Post 1</li>
+      <li>Post 1</li>
+      <li>Post 1</li>
+    </ul>
+  </section>
+  <section class="widget">
+   <h3>Ultimos Comentarios</h3>
+   <ul>
+    <li>Post 1</li>
+    <li>Post 1</li>
+    <li>Post 1</li>
+    <li>Post 1</li>
+  </ul>
+</section>
+<section class="widget">
+ <h3>Twitter</h3>
+ <ul>
+  <li>Post 1</li>
+  <li>Post 1</li>
+  <li>Post 1</li>
+  <li>Post 1</li>
+</ul>
+</section>
+
+
+</aside>
+</div>
+<hr/>
+<footer>
+ Este site é criado por Sérgio Berlotto, utiliza <a href="http://berlotto.net/asciiblog">asciiblog</a> engine.<br/>
+ HTML5 e CSS3. W3C Ready!
+</footer>
 
 </div>
-<sidebar>
-	
-	<section class="widget">
-		<header>
-			<h1>Titulo do WIdget</h1>
-		</header>
-		<p>Este widget é um item da lateral</p>
-	</section>
-
-</sidebar>
-<footer>
-	Este site é criado por Sérgio Berlotto, utiliza <a href="http://berlotto.net/asciiblog">asciiblog</a> engine.<br/>
-	HTML5 e CSS3. W3C Ready!
-</footer>
 
 
 </body>
