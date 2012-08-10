@@ -33,17 +33,15 @@
 <body>
 
 	<div class="container">
-		<div class="row">
+		<div class="row page-header">
 
 			<header class="span3">
 				<img src="{{url_for('static', filename='img/logotipo.png')}}">
 			</header>
 
-		</div>
-		<div class="row">
 
-			<div  id="menu" class="span12">
-				<ul class="nav nav-tabs">
+			<div  id="menu" class="span7 offset2">
+				<ul class="nav nav-pills pull-right">
 					<li class="active"><a href="/">Home</a></li>
 					<li><a href="/blog">Blog</a></li>
 					<li><a href="#">Livro</a></li>
@@ -51,6 +49,27 @@
 					<li><a href="#">Fotos</a></li>
 					<li><a href="#">Contato</a></li>
 					<li><a href="#">Projetos</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administração <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-header">Blog</li>
+              <li><a href="#">Posts</a></li>
+              <li><a href="{{url_for('blog.new_post')}}">New post</a></li>
+              <li><a href="#">Midia</a></li>
+              <li><a href="#">Comentários</a></li>
+              <li class="nav-header">Encurtador</li>
+              <li><a href="#">Links</a></li>
+              <li><a href="#">Encurtar</a></li>
+              <li class="nav-header">Páginas</li>
+              <li><a href="#">Páginas</a></li>
+              <li><a href="#">Nova Pagina</a></li>
+              <li class="nav-header">Usuário</li>
+              <li><a href="#">Usuários</a></li>
+              <li><a href="#">Logout</a></li>
+              <li class="divider"></li>
+              <li><a href="/configuration">Configuration</a></li>
+            </ul>
+          </li>
 				</ul>
 			</div>
 
@@ -70,6 +89,8 @@
 
 	</div>
 
+{% block bottompage %}
+{% endblock %}
 
 </body>
 </html>
