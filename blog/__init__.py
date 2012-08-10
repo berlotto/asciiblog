@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, abort
 
-blog = Blueprint('blog', __name__)
+blog = Blueprint('blog', __name__,template_folder='templates', static_folder='static')
 
 @blog.route('/')
-def blog_indes(page):
-    return render_template('blog_index.html')
+def blog_index():
+    return render_template('index.html')
