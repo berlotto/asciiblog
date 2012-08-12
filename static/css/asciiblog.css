@@ -11,8 +11,14 @@ header {
 
 article{
 	background-color: transparent;
+	display: inline-block;
 }
 
 .widget{
 	background-color: transparent;
+}
+
+.postbanner{
+	margin-right: 30px;
+	margin-left: 0px !important;
 }

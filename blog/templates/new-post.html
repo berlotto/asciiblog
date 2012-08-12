@@ -4,55 +4,31 @@
 
 <!-- EpicEditor -->
 <script type="text/javascript" src="{{url_for('blog.static', filename="epiceditor/js/epiceditor.min.js")}}"></script>
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 
 {% endblock %}
 
 {% block content %}
 
+
+{% include 'mensagens.html' %}
+
 	<form id="form-new-post" class="well form-horizontal" action="save-post" method="POST">
 		<h1>Novo post</h1>
-		<label for="title">Título</label><input class="span7" id="title" name="title" type="text" length="150"><br>&nbsp;
-		<div id="epiceditor">
-		</div>
-		<label for="title">Resumo</label><textarea class="span12" id="resumo" name="resumo"></textarea>
-		<label class="checkbox" for="destaque"><input type="checkbox" value="destaque" id="destaque">Post destacado</label>
-		<label for="title">Slug</label><input class="span7" id="slug" name="slug" type="text" length="150">
-		<label for="foto">Banner</label><input type="file" id="foto" name="foto">
-		<button class="btn btn-large btn-primary pull-right">Salvar</button>
+		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150"><br>&nbsp;
+		<div id="epiceditor"></div>
+		<input type="hidden" id="content" name="content" value="">
+		<label for="resume">Resumo</label><textarea class="span12 required" id="resume" name="resume"></textarea>
+		<label class="checkbox" for="featured"><input type="checkbox" value="featured" id="featured" name="featured">Post destacado</label>
+		<label for="slug">Slug</label><input class="span7 required" id="slug" name="slug" type="text" length="150">
+		<label for="photo">Banner</label><input type="file" id="photo" name="photo">
+
+		<input type="submit" id="btn-enviar" class="btn btn-large btn-primary pull-right" value="Salvar">
 	</form>
 
 {% endblock %}
 
 
 {%block bottompage%}
-<script type="text/javascript">
-<!--
-	var opts = {
-	  container: 'epiceditor',
-	  basePath: '/blog/static/epiceditor',
-	  clientSideStorage: true,
-	  localStorageName: 'berlottonetpost',
-	  parser: marked,
-	  file: {
-	    name: 'epiceditor',
-	    defaultContent: '',
-	    autoSave: 100
-	  },
-	  theme: {
-	    base:'/themes/base/epiceditor.css',
-	    preview:'/themes/preview/github.css',
-	    editor:'/themes/editor/epic-dark.css'
-	  },
-	  focusOnLoad: false,
-	  shortcut: {
-	    modifier: 18,
-	    fullscreen: 70,
-	    preview: 80,
-	    edit: 79
-	  }
-	};
-	var editor = new EpicEditor(opts).load();
--->
-</script>
-
+<script type="text/javascript" src="{{url_for('blog.static', filename="js/new-post.js")}}"></script>
 {%endblock%}

@@ -11,6 +11,7 @@ class Post(Base):
 	date_created = Column(DateTime)
 	date_updated = Column(DateTime)
 	picture	= Column(String(200)) #path of banner picture for this post
+	featured = Column(String(1)) #may be 'S' or ('N','')
 
 	def __repr__(self):
 		return '<Post %r>' % (self.slug)
