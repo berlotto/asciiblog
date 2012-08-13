@@ -1,24 +1,112 @@
 {% extends "base.html" %}
 
+{% block head %}
+<script src="http://malsup.github.com/jquery.form.js"></script> 
+{% endblock %}
+
 {% block content %}
 
 {% include 'mensagens.html' %}
 
 	<section class="span9 artigo">
 
-		<article>
+			<article>
 			<header>
-				<h1>Titulo do Post</h1>
-				<h2>Data: 08/Ago/2012 Comentários: 13</h2><span id="post-editor"><a href="/blog/edit/5" class='awesome'>Editar</a>
+		    	<div class="btn-group pull-right">
+				    <button class="btn"><i class="icon-comment"></i>10</button>
+				    <button class="btn"><i class="icon-thumbs-up"></i>12</button>
+				    <button class="btn"><i class="icon-thumbs-down"></i>2</button>
+				    <button class="btn" onclick="edit({{post.id}});"><i class="icon-edit"></i></button>
+				    <a href="{{url_for('blog.edit_post')}}"><i class="icon-edit"></i></a>
+			    </div>
+				<h1>{{post.title}}</h1>
+				<h3>Data: {{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h3>
 			</header>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget orci tellus. Phasellus in metus enim, feugiat placerat velit. Aenean iaculis, libero ac laoreet eleifend, lectus libero fermentum lectus, eget convallis mi leo vel nisl. Suspendisse ac turpis metus, ac porta erat. Nulla nec magna nisl. Praesent pretium purus vel elit ultricies sagittis. Phasellus ornare faucibus leo convallis feugiat. Praesent eu arcu eget elit pulvinar faucibus id vel urna. Fusce aliquet lacus non dolor bibendum convallis. Sed urna tortor, pretium adipiscing interdum in, elementum et lacus. Vivamus quis felis ac lectus aliquet porttitor. Donec fermentum facilisis pellentesque. Aenean tincidunt nibh nec odio scelerisque tincidunt. Donec in eros quam.
+			<a href="#" class="thumbnail span2 postbanner">
+				<img src="http://placehold.it/200x150" alt="">
+			</a>
+			<p class="span6 pull-right">{{post.content|translate_markdown}}</p>
+			</article>
+			<br><br>
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-globe"></i></span><input class="span4" id="prependedInput" readonly="readonly" size="16" type="text" value="http://berlotto.net/u/123">
+			</div>
+			
+			<div class="comments">
+				<h2>Comentários:</h2>
+				<div class="comment">
+					<div class="comment-header">
+				    	<div class="pull-right">
+						    <i class="icon-thumbs-up"></i>
+						    <i class="icon-thumbs-down"></i>
+					    </div>
+						<span>Autor: Usuário 1</span>
+						<span>Data: 01/01/2012</span>
+					</div>
+					<div class="comment-content">
+						<img src="http://placehold.it/32x32" alt="">
+						<p>{{lipsum(n=1, html=True, min=5, max=30)}}</p>
+					</div>
+				</div>
+				<div class="comment">
+					<div class="comment-header">
+				    	<div class="pull-right">
+						    <i class="icon-thumbs-up"></i>
+						    <i class="icon-thumbs-down"></i>
+					    </div>
+						<span>Autor: Usuário 2</span>
+						<span>Data: 01/01/2012</span>
+					</div>
+					<div class="comment-content">
+						<img src="http://placehold.it/32x32" alt="">
+						<p>{{lipsum(n=1, html=True, min=5, max=30)}}</p>
+					</div>
 
-			</p>
-		</article>
+						<div class="comment">
+							<div class="comment-header">
+						    	<div class="pull-right">
+								    <i class="icon-thumbs-up"></i>
+								    <i class="icon-thumbs-down"></i>
+							    </div>
+								<span>Autor: Usuário 3</span>
+								<span>Data: 01/01/2012</span>
+							</div>
+							<div class="comment-content">
+								<img src="http://placehold.it/32x32" alt="">
+								<p>{{lipsum(n=1, html=True, min=5, max=50)}}</p>
+							</div>
+						</div>
+
+
+				</div>
+			</div>
+
+			<form id="form-comentario" method="POST" action="{{url_for('blog.save_comment')}}" class="well form-vertical">
+				<h3>Enviar comentário</h3>
+				<label for="title">Título:</label><input type="text" id="title" name="title" class="span6">
+				<label for="nome">Nome:</label><input type="text" id="name" name="name" class="span6">
+				<label for="email">Email:</label><input type="text" id="email" name="email" class="span6">
+				<label for="content">Comentário:</label>
+				<textarea id="content" name="content" class="span8"></textarea>
+				<input type="submit" value="Comentar" class="btn pull-right">
+			</form>
+
+		<hr>
 
 	</section>
 
 {% include 'sidebar.html' %}
 
+{% endblock %}
+
+{% block bottompage %}
+<script type="text/javascript">
+    // wait for the DOM to be loaded 
+    $(document).ready(function() { 
+        // bind 'form-comentario' and provide a simple callback function 
+        $('#form-comentario').ajaxForm(function() { 
+            alert("Thank you for your comment!"); 
+        }); 
+    }); 
+</script>
 {% endblock %}

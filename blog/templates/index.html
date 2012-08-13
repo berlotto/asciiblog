@@ -7,66 +7,21 @@
 		{%for post in posts%}
 			<article>
 			<header>
-		    	<div class="btn-group pull-right">
-				    <button class="btn"><i class="icon-comment"></i>10</button>
-				    <button class="btn"><i class="icon-thumbs-up"></i>12</button>
-				    <button class="btn"><i class="icon-thumbs-down"></i>2</button>
+		    	<div class="input-prepend pull-right">
+				    <span class="add-on"><i class="icon-comment"></i>10</span>
+				    <span class="add-on"><i class="icon-thumbs-up"></i>12</span>
+				    <span class="add-on"><i class="icon-thumbs-down"></i>2</span>
 			    </div>
 				<h1><a href="/blog/article/{{post.slug}}">{{post.title}}</a></h1>
 				<h3>Data: {{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h3>
 			</header>
-			<a href="#" class="thumbnail span3 postbanner">
+			<a href="#" class="thumbnail span2 postbanner">
 				<img src="http://placehold.it/200x150" alt="">
 			</a>
-			<p>{{post.resume}}</p>
+			<p class="span6 pull-right">{{post.resume}}</p>
 			</article>
 		<hr>
 		{%endfor%}
-
-		<article>
-			<header>
-		    	<div class="btn-group pull-right">
-				    <button class="btn"><i class="icon-comment"></i>10</button>
-				    <button class="btn"><i class="icon-thumbs-up"></i>12</button>
-				    <button class="btn"><i class="icon-thumbs-down"></i>2</button>
-			    </div>
-				<h1><a href="/blog/article/meu-primeiro-post">Titulo do Post</a></h1>
-				<h3>Data: 08/Ago/2012</h3>
-			</header>
-			<a href="#" class="thumbnail span3 postbanner">
-				<img src="http://placehold.it/250x190" alt="">
-			</a>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget orci tellus. Phasellus in metus enim, feugiat placerat velit. Aenean iaculis, libero ac laoreet eleifend, lectus libero fermentum lectus, eget convallis mi leo vel nisl. Suspendisse ac turpis metus, ac porta erat. Nulla nec magna nisl. Praesent pretium purus vel elit ultricies sagittis. Phasellus ornare faucibus leo convallis feugiat. Praesent eu arcu eget elit pulvinar faucibus id vel urna. Fusce aliquet lacus non dolor bibendum convallis. Sed urna tortor, pretium adipiscing interdum in, elementum et lacus. Vivamus quis felis ac lectus aliquet porttitor. Donec fermentum facilisis pellentesque. Aenean tincidunt nibh nec odio scelerisque tincidunt. Donec in eros quam.
-
-			</p>
-		</article>
-		<hr>
-		<article>
-			<header>
-		    	<div class="btn-group pull-right">
-				    <button class="btn"><i class="icon-comment"></i>10</button>
-				    <button class="btn"><i class="icon-thumbs-up"></i>12</button>
-				    <button class="btn"><i class="icon-thumbs-down"></i>2</button>
-			    </div>
-				<h1><a href="/blog/article/meu-primeiro-post">Titulo do Post 2</a></h1>
-				<h3>Data: 06/Ago/2012</h3>
-			</header>
-			<a href="#" class="thumbnail span3 postbanner">
-				<img src="http://placehold.it/250x190" alt="">
-			</a>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget orci tellus. Phasellus in metus enim, feugiat placerat velit. Aenean iaculis, libero ac laoreet eleifend, lectus libero fermentum lectus, eget convallis mi leo vel nisl. Suspendisse ac turpis metus, ac porta erat. Nulla nec magna nisl. Praesent pretium purus vel elit ultricies sagittis. Phasellus ornare faucibus leo convallis feugiat. Praesent eu arcu eget elit pulvinar faucibus id vel urna. Fusce aliquet lacus non dolor bibendum convallis. Sed urna tortor, pretium adipiscing interdum in, elementum et lacus. Vivamus quis felis ac lectus aliquet porttitor. Donec fermentum facilisis pellentesque. Aenean tincidunt nibh nec odio scelerisque tincidunt. Donec in eros quam.
-			</p>
-
-			<p>
-				Praesent ultrices vulputate magna, ac ornare nulla blandit sed. Suspendisse vel ipsum lectus, sit amet ultrices elit. Pellentesque porta lacus eget nisi faucibus in porttitor sem scelerisque. Cras bibendum elementum sapien, vitae tincidunt arcu imperdiet sed. Phasellus ac tortor quam. Quisque eu risus risus. Proin eget mauris eget mi pulvinar pretium nec sit amet felis. Mauris libero libero, viverra a ultrices id, faucibus at neque. Vestibulum pretium ultrices lobortis.
-			</p>
-
-			<p>
-				Etiam pellentesque placerat eleifend. Vivamus ornare fermentum aliquet. Fusce ut odio diam, vel consectetur mi. Maecenas in diam nec urna euismod varius vitae faucibus arcu. Nulla eu tortor lorem. Quisque at turpis leo, ut consectetur tortor. Nullam scelerisque consectetur sem at aliquam. Aliquam erat volutpat. Aenean pretium libero vel massa blandit ultrices. Ut lobortis, nunc ut dapibus pharetra, nibh massa fermentum erat, ac porta quam lectus placerat nulla. 
-			</p>
-		</article>
 
 		<div class="pagination pagination-right">
 			<ul>

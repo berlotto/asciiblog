@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Novo documento 1">
+  <defs
+     id="defs4">
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter3830"
+       x="-0.02104117"
+       width="1.0420823"
+       y="-0.21274962"
+       height="1.4254992">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.5597829"
+         id="feGaussianBlur3832" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter3834"
+       x="-0.032918967"
+       width="1.0658379"
+       y="-0.39592612"
+       height="1.7918522">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.5597829"
+         id="feGaussianBlur3836" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="392.29565"
+     inkscape:cy="646.57725"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="709"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       id="rect3107"
+       width="260.00003"
+       height="73.571434"
+       x="218.21429"
+       y="232.18359"
+       ry="13.92858"
+       style="fill:#000000;fill-opacity:1" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2985-0"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter3830);font-family:'MEGA!';-inkscape-font-specification:'MEGA!'"
+       transform="matrix(1.2840941,0,0,1.2840941,93.03296,-300.16599)"><flowRegion
+         id="flowRegion2987-7"><rect
+           id="rect2989-8"
+           width="511.42856"
+           height="148.57143"
+           x="111.42857"
+           y="423.79074"
+           style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:'MEGA!';-inkscape-font-specification:'MEGA!'" /></flowRegion><flowPara
+         id="flowPara2991-6">BERLOTTO</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2985-3-8"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter3834);font-family:Birdman;-inkscape-font-specification:Birdman"
+       transform="matrix(1.2840941,0,0,1.2840941,93.03296,-271.29002)"><flowRegion
+         id="flowRegion2987-3-8"><rect
+           id="rect2989-3-4"
+           width="511.42856"
+           height="148.57143"
+           x="111.42857"
+           y="423.79074"
+           style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Birdman;-inkscape-font-specification:Birdman" /></flowRegion><flowPara
+         id="flowPara2991-8-3">desenvolvimento</flowPara></flowRoot>    <rect
+       id="rect3107-6"
+       width="249.29112"
+       height="63.933949"
+       x="222.85443"
+       y="237.00235"
+       ry="12.104006"
+       style="fill:none;stroke:#fffafa;stroke-width:0.99463034;stroke-opacity:1" />
+    <g
+       id="g4007"
+       transform="translate(2.1428571,-5)"
+       inkscape:export-filename="/home/berlotto/Desenvolvimento/asciiblog/static/img/logotipo-b.png"
+       inkscape:export-xdpi="109.96"
+       inkscape:export-ydpi="109.96">
+      <flowRoot
+         transform="matrix(1.2840941,0,0,1.2840941,128.25739,-158.56837)"
+         style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'MEGA!';-inkscape-font-specification:'MEGA!'"
+         id="flowRoot2985"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2987"><rect
+             style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:'MEGA!';-inkscape-font-specification:'MEGA!'"
+             y="423.79074"
+             x="111.42857"
+             height="148.57143"
+             width="511.42856"
+             id="rect2989" /></flowRegion><flowPara
+           id="flowPara2991">BERLOTTO</flowPara></flowRoot>      <flowRoot
+         transform="matrix(1.2840941,0,0,1.2840941,128.25739,-129.69239)"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Birdman;-inkscape-font-specification:Birdman"
+         id="flowRoot2985-3"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2987-3"><rect
+             style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Birdman;-inkscape-font-specification:Birdman"
+             y="423.79074"
+             x="111.42857"
+             height="148.57143"
+             width="511.42856"
+             id="rect2989-3" /></flowRegion><flowPara
+           id="flowPara2991-8">desenvolvimento</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot3963"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Birdman;-inkscape-font-specification:Birdman"
+         transform="matrix(1.2840941,0,0,1.2840941,324.25739,-129.69239)"><flowRegion
+           id="flowRegion3965"><rect
+             id="rect3967"
+             width="511.42856"
+             height="148.57143"
+             x="111.42857"
+             y="423.79074"
+             style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Birdman;-inkscape-font-specification:Birdman" /></flowRegion><flowPara
+           id="flowPara3969">.net</flowPara></flowRoot>      <path
+         inkscape:connector-curvature="0"
+         d="m 253.09966,408.9254 c 0.56497,1.76069 2.00078,3.21432 3.24629,4.50938 2.64419,2.7494 3.50306,3.39447 6.53456,6.093 5.478,4.50066 11.36629,8.48861 17.63061,11.81798 2.70985,1.44023 5.45114,2.83386 8.27538,4.03439 3.65576,1.55399 7.37672,2.96252 11.14456,4.22062 4.39617,1.4679 8.88726,2.63457 13.33088,3.95185 28.59742,7.45923 58.08805,10.60563 87.52118,12.4131 6.75027,0.41454 13.50909,0.67558 20.26363,1.01337 7.33009,-0.0293 14.66471,0.17124 21.99028,-0.0878 21.38543,-0.75624 42.76648,-3.33219 63.67541,-7.90354 15.71666,-3.43616 19.48975,-5.01688 34.41237,-9.80039 12.08302,-4.26829 23.85107,-9.38759 35.24214,-15.25164 5.56949,-2.86714 5.37138,-2.78596 8.80339,-4.90565 0,0 3.9199,-1.50613 3.9199,-1.50613 l 0,0 c -6.14014,3.52869 -9.21292,5.43 -15.31705,8.48177 -11.08751,5.54322 -22.52111,10.38451 -34.24533,14.41835 -14.70625,4.58583 -18.40125,6.09621 -33.89099,9.37547 -28.13579,5.9565 -56.94283,8.22083 -85.66891,7.95538 -6.78041,-0.32047 -13.56445,-0.57145 -20.34121,-0.96141 -29.72927,-1.71077 -59.51881,-4.62388 -88.49003,-11.78531 -9.18232,-2.52153 -16.48626,-4.24099 -25.28628,-7.68801 -2.89986,-1.13588 -5.69499,-2.52944 -8.47345,-3.93641 -6.42357,-3.25279 -12.48199,-7.1698 -18.18588,-11.55478 -2.86,-2.33957 -4.34964,-3.48354 -6.97172,-5.87666 -1.44814,-1.3217 -3.01124,-2.71658 -3.80504,-4.55527 0,0 4.68531,-2.47165 4.68531,-2.47165 z"
+         id="path4001"
+         style="fill:#ff0000;fill-opacity:1;stroke:#fffafa;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         d="m 524.26504,384.6285 c -3.56252,-0.0807 -7.12599,-0.12049 -10.68904,-0.17228 -18.44429,-0.53001 -36.89457,1.70882 -54.9623,5.30716 -6.38697,1.27202 -12.71106,2.84157 -19.06659,4.26236 -32.03682,8.04125 -63.09895,19.41696 -93.85502,31.34946 -8.07144,3.13149 -16.11965,6.32369 -24.14035,9.58296 -7.25346,2.94749 -14.45365,6.02444 -21.68047,9.03667 -23.79976,10.54553 -12.49986,5.22614 -33.95596,15.83807 0,0 1.57449,-1.25727 1.57449,-1.25727 l 0,0 c 20.81328,-10.07903 9.84064,-5.02352 32.97278,-15.04687 7.08752,-2.90229 14.1567,-5.84976 21.26255,-8.70686 16.64795,-6.69375 32.84444,-13.00417 49.68184,-19.23932 8.48799,-3.14324 16.97646,-6.29062 25.53972,-9.2226 19.18045,-6.56723 24.54973,-7.80139 43.74477,-13.20569 6.49399,-1.52229 12.95693,-3.1837 19.48197,-4.56688 18.8133,-3.98804 37.95661,-6.58436 57.2007,-6.8907 3.72113,-0.052 7.44263,-0.0926 11.16329,-0.17227 0,0 -4.27238,3.10406 -4.27238,3.10406 z"
+         id="path4005"
+         style="fill:#ff0000;fill-opacity:1;stroke:#fffafa;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

@@ -4,6 +4,7 @@ from models import Post, Comment, Like, Link
 from database import db_session
 from datetime import datetime
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm.exc import NoResultFound
 import sys
 
 blog = Blueprint('blog', __name__, template_folder='templates', static_folder='static')
@@ -17,9 +18,25 @@ def blog_index():
 def new_post():
 	return render_template('new-post.html')
 
+@blog.route('/edit-post/<int:post_id>')
+def edit_post(post_id):
+	post = db_session.query(Post).filter(Post.id==post_id).one()
+	if post:
+		return render_template('new-post.html',post=post)
+	else:
+		return abort(404)
+
 @blog.route('/article/<slug>/')
 def view_post(slug):
-	return render_template('one-post.html')
+	try:
+		post = db_session.query(Post).filter(Post.slug==slug).one()
+		return render_template('one-post.html',post=post)
+	except NoResultFound as nrf:
+		return abort(404)
+
+@blog.route('/save-comment',methods = ['POST',])
+def save_comment():
+	return "Ok"
 
 @blog.route('/save-post',methods = ['POST',])
 def save_post():
