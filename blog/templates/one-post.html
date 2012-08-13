@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block head %}
-<script src="http://malsup.github.com/jquery.form.js"></script> 
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<script type="text/javascript">
+edit = function(url){
+	window.location = url;
+}
+</script>
 {% endblock %}
 
 {% block content %}
@@ -16,8 +21,7 @@
 				    <button class="btn"><i class="icon-comment"></i>10</button>
 				    <button class="btn"><i class="icon-thumbs-up"></i>12</button>
 				    <button class="btn"><i class="icon-thumbs-down"></i>2</button>
-				    <button class="btn" onclick="edit({{post.id}});"><i class="icon-edit"></i></button>
-				    <a href="{{url_for('blog.edit_post')}}"><i class="icon-edit"></i></a>
+				    <button class="btn" onclick="edit('{{url_for('blog.edit_post', post_id=post.id)}}');"><i class="icon-edit"></i></button>
 			    </div>
 				<h1>{{post.title}}</h1>
 				<h3>Data: {{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h3>
@@ -31,7 +35,7 @@
 			<div class="input-prepend">
 				<span class="add-on"><i class="icon-globe"></i></span><input class="span4" id="prependedInput" readonly="readonly" size="16" type="text" value="http://berlotto.net/u/123">
 			</div>
-			
+
 			<div class="comments">
 				<h2>Comentários:</h2>
 				<div class="comment">
@@ -101,12 +105,12 @@
 
 {% block bottompage %}
 <script type="text/javascript">
-    // wait for the DOM to be loaded 
-    $(document).ready(function() { 
-        // bind 'form-comentario' and provide a simple callback function 
-        $('#form-comentario').ajaxForm(function() { 
-            alert("Thank you for your comment!"); 
-        }); 
-    }); 
+    // wait for the DOM to be loaded
+    $(document).ready(function() {
+        // bind 'form-comentario' and provide a simple callback function
+        $('#form-comentario').ajaxForm(function() {
+            alert("Thank you for your comment!");
+        });
+    });
 </script>
 {% endblock %}

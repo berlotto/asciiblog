@@ -59,7 +59,7 @@
 			"file": "blog/models.py",
 			"settings":
 			{
-				"buffer_size": 1219,
+				"buffer_size": 1273,
 				"line_ending": "Unix"
 			}
 		},
@@ -75,7 +75,7 @@
 			"file": "asciiblog.py",
 			"settings":
 			{
-				"buffer_size": 366,
+				"buffer_size": 971,
 				"line_ending": "Unix"
 			}
 		},
@@ -83,7 +83,7 @@
 			"file": "asciiblog.cfg",
 			"settings":
 			{
-				"buffer_size": 21,
+				"buffer_size": 55,
 				"line_ending": "Unix",
 				"name": "DEBUG=True"
 			}
@@ -92,24 +92,7 @@
 			"file": "templates/base.html",
 			"settings":
 			{
-				"buffer_size": 2832,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/berlotto/ConselhoDeComunicacao.txt",
-			"settings":
-			{
-				"buffer_size": 13142,
-				"line_ending": "Unix",
-				"name": "ConselhoDeComunicacao.txt"
-			}
-		},
-		{
-			"file": "templates/index.html",
-			"settings":
-			{
-				"buffer_size": 300,
+				"buffer_size": 3064,
 				"line_ending": "Unix"
 			}
 		},
@@ -117,9 +100,57 @@
 			"file": "static/css/asciiblog.css",
 			"settings":
 			{
-				"buffer_size": 100,
+				"buffer_size": 797,
 				"line_ending": "Unix",
 				"name": ".artigo{"
+			}
+		},
+		{
+			"file": "blog/templates/index.html",
+			"settings":
+			{
+				"buffer_size": 1133,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/new-post.html",
+			"settings":
+			{
+				"buffer_size": 1387,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/__init__.py",
+			"settings":
+			{
+				"buffer_size": 2088,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/static/epiceditor/themes/editor/epic-light.css",
+			"settings":
+			{
+				"buffer_size": 173,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/home.html",
+			"settings":
+			{
+				"buffer_size": 3837,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/one-post.html",
+			"settings":
+			{
+				"buffer_size": 3676,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -235,6 +266,9 @@
 	},
 	"file_history":
 	[
+		"/home/berlotto/Desenvolvimento/asciiblog/templates/index.html",
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/static/epiceditor/themes/base/epiceditor.css",
+		"/home/berlotto/ConselhoDeComunicacao.txt",
 		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/auth/static/js/auth.js",
 		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/content/static/js/jquery.tools.min.js",
 		"/home/berlotto/Desenvolvimento/GabineteDigital/gd/gd/audience/static/js/audience.js",
@@ -300,7 +334,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/home/berlotto/Desenvolvimento/GabineteDigital/,*.js",
@@ -417,7 +451,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 11,
 			"sheets":
 			[
 				{
@@ -425,15 +459,15 @@
 					"file": "blog/models.py",
 					"settings":
 					{
-						"buffer_size": 1219,
+						"buffer_size": 1273,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								488,
-								488
+								0,
+								0
 							]
 						],
 						"settings":
@@ -478,15 +512,15 @@
 					"file": "asciiblog.py",
 					"settings":
 					{
-						"buffer_size": 366,
+						"buffer_size": 971,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								364,
-								364
+								0,
+								0
 							]
 						],
 						"settings":
@@ -504,15 +538,15 @@
 					"file": "asciiblog.cfg",
 					"settings":
 					{
-						"buffer_size": 21,
+						"buffer_size": 55,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21,
-								21
+								0,
+								0
 							]
 						],
 						"settings":
@@ -531,20 +565,49 @@
 					"file": "templates/base.html",
 					"settings":
 					{
-						"buffer_size": 2832,
+						"buffer_size": 3064,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1060,
-								1060
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "static/css/asciiblog.css",
+					"settings":
+					{
+						"buffer_size": 797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": ".artigo{",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -554,46 +617,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/home/berlotto/ConselhoDeComunicacao.txt",
-					"settings":
-					{
-						"buffer_size": 13142,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1361,
-								1361
-							]
-						],
-						"settings":
-						{
-							"auto_name": "ConselhoDeComunicacao.txt",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 6,
-					"file": "templates/index.html",
+					"file": "blog/templates/index.html",
 					"settings":
 					{
-						"buffer_size": 300,
+						"buffer_size": 1133,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								76,
-								76
+								0,
+								0
 							]
 						],
 						"settings":
@@ -609,24 +645,131 @@
 				},
 				{
 					"buffer": 7,
-					"file": "static/css/asciiblog.css",
+					"file": "blog/templates/new-post.html",
 					"settings":
 					{
-						"buffer_size": 100,
+						"buffer_size": 1387,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								97,
-								97
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": ".artigo{",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "blog/__init__.py",
+					"settings":
+					{
+						"buffer_size": 2088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "blog/static/epiceditor/themes/editor/epic-light.css",
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "templates/home.html",
+					"settings":
+					{
+						"buffer_size": 3837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								458,
+								458
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "blog/templates/one-post.html",
+					"settings":
+					{
+						"buffer_size": 3676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								638,
+								638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -678,6 +821,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"one",
+				"blog/templates/one-post.html"
+			],
+			[
+				"home",
+				"templates/home.html"
+			],
+			[
+				"epicl",
+				"blog/static/epiceditor/themes/editor/epic-light.css"
+			],
 			[
 				"tools.js",
 				"gd/gd/content/static/js/jquery.tools.min.js"

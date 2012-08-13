@@ -14,6 +14,21 @@
 {% include 'mensagens.html' %}
 
 	<form id="form-new-post" class="well form-horizontal" action="save-post" method="POST">
+	{% if post %}
+		<h1>Editar post</h1>
+		<label id="id">Post id:{{post.id}}</label>
+		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150" value="{{post.title}}"><br>&nbsp;
+		<div id="epiceditor">value="{{post.content}}"</div>
+		<input type="hidden" id="content" name="content" value="value="{{post.content}}"">
+		<label for="resume">Resumo</label><textarea class="span12 required" id="resume" name="resume">value="{{post.resume}}"</textarea>
+		<label class="checkbox" for="featured"><input type="checkbox" value="featured" id="featured" name="featured" {%if post.featured%}checked="checked"{%endif%}>Post destacado</label>
+		<label for="slug">Slug</label><input class="span7 required" id="slug" name="slug" type="text" length="150" value="{{post.slug}}">
+		<label for="photo">Banner</label><input type="file" id="photo" name="photo">
+		<img src="{{post.picture}}" class="img-featured">
+
+O novo Uploader: https://github.com/blueimp/jQuery-File-Upload/wiki/Basic-plugin
+
+	{% else %}
 		<h1>Novo post</h1>
 		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150"><br>&nbsp;
 		<div id="epiceditor"></div>
@@ -22,6 +37,7 @@
 		<label class="checkbox" for="featured"><input type="checkbox" value="featured" id="featured" name="featured">Post destacado</label>
 		<label for="slug">Slug</label><input class="span7 required" id="slug" name="slug" type="text" length="150">
 		<label for="photo">Banner</label><input type="file" id="photo" name="photo">
+	{% endif %}
 
 		<input type="submit" id="btn-enviar" class="btn btn-large btn-primary pull-right" value="Salvar">
 	</form>
