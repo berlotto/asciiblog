@@ -40,3 +40,16 @@ $('#title').live('keyup', function(){
 	var cloneText = $(this).val().toLowerCase().split(/[ _]/).join('-').replace(/[^a-z0-9-]/g, '');
 	$('#slug').val(cloneText);
 });   
+
+$(function(){ // wait for document to load
+  $('#postfile').MultiFile({
+    list: '#postfile-list',
+    accept: 'gif|jpg|png',
+    max: 1,
+    STRING: {
+      remove:'<i class="icon-remove"></i>',
+      selected:'Selecionado: $file',
+      denied:'Utilize somente imagens para o banner do post!'
+    }
+  });
+});

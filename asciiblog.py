@@ -10,8 +10,15 @@ from blog import blog
 app = Flask(__name__)
 app.config.from_pyfile('asciiblog.cfg')
 
+#========================================= UPLOADS
+from flaskext.uploads import UploadSet, configure_uploads, IMAGES, UploadNotAllowed
+
+uploaded_files = UploadSet('postfile')
+configure_uploads(app, uploaded_files)
+
 #========================================= BLUEPRINTS APPS
 app.register_blueprint(blog, url_prefix='/blog')
+blog.register_uploader(uploaded_files)
 
 #========================================= CUSTOM FILTERS FOR JINJA
 from jinja2 import evalcontextfilter, Markup, escape

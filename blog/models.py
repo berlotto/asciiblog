@@ -10,11 +10,18 @@ class Post(Base):
 	content = Column(Text)
 	date_created = Column(DateTime)
 	date_updated = Column(DateTime)
-	picture	= Column(String(200)) #path of banner picture for this post
+	picture	= Column(Integer, ForeignKey("file.id")) #id if File that is used for banner
 	featured = Column(String(1)) #may be 'S' or ('N','')
 
 	def __repr__(self):
 		return '<Post %r>' % (self.slug)
+
+class File(Base):
+	"""This model represents the media files uploaded from user"""
+	__tablename__ = "file"
+	id = Column(Integer, primary_key=True, autoincrement=True)
+	title = Column(String(150))
+	name = Column(String(1000))
 
 class Comment(Base):
 	__tablename__ = 'comment'

@@ -25,6 +25,8 @@
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/asciiblog.css') }}"/>
 	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+	<!-- For show pretty messages instead default browser alerts -->
+	<script src="{{url_for('static', filename="file-upload/jquery.blockUI.js")}}"></script>
 
 	{% block head %}
 	{% endblock %}

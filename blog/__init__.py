@@ -5,13 +5,22 @@ from database import db_session
 from datetime import datetime
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound
+from flaskext.uploads import UploadNotAllowed
 import sys
 
 blog = Blueprint('blog', __name__, template_folder='templates', static_folder='static')
+uploaded_files = None
+
+def register_uploader(obj):
+	global uploaded_files
+	uploaded_files = obj
+	print "Gravado o salvador!"
+
+blog.register_uploader = register_uploader
 
 @blog.route('/')
 def blog_index():
-	posts = db_session.query(Post).order_by("date_created").limit(10)
+	posts = db_session.query(Post).order_by("date_created desc").limit(10)
 	return render_template('index.html',posts=posts)
 
 @blog.route('/new-post')
@@ -62,8 +71,15 @@ def save_post():
 		db_session.add(post)
 		db_session.commit()
 
+		try:
+			global uploaded_files
+			photo = request.files.get('postfile')
+			filename = uploaded_files.save(photo)
+		except UploadNotAllowed:
+			flash("The upload was not allowed")
+
 		flash('Post salvo com sucesso')
-		return redirect(url_for('view_post',slug=slug))
+		return redirect(url_for('view_post',  slug=slug))
 	except IntegrityError as e:
 		db_session.rollback()
 		flash( "O Slug informado ja existe. Altere e tente novamente." )
