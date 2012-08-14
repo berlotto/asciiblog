@@ -59,7 +59,13 @@ def save_post():
 			resume = request.form['resume']
 		slug = request.form['slug']
 
-		post = Post()
+		add = False;
+		if 'id' in request.form:
+			post = db_session.query(Post).get(request.form['id'])
+		else:
+			add =  True
+			post = Post()
+
 		post.title = title
 		post.content = content
 		post.featured = featured or 'N'
@@ -68,7 +74,9 @@ def save_post():
 		post.date_updated = datetime.today()
 		post.picture = ''
 
-		db_session.add(post)
+		if add:
+			db_session.add(post)
+
 		db_session.commit()
 
 		try:
@@ -79,7 +87,7 @@ def save_post():
 			flash("The upload was not allowed")
 
 		flash('Post salvo com sucesso')
-		return redirect(url_for('view_post',  slug=slug))
+		return redirect(url_for('blog.view_post',  slug=slug))
 	except IntegrityError as e:
 		db_session.rollback()
 		flash( "O Slug informado ja existe. Altere e tente novamente." )

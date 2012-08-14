@@ -15,7 +15,7 @@
 
 {% include 'mensagens.html' %}
 
-	<form id="form-new-post" class="well form-horizontal" enctype="multipart/form-data" action="save-post" method="POST">
+	<form id="form-new-post" class="well form-horizontal" enctype="multipart/form-data" action="{{url_for('blog.save_post')}}" method="POST">
 	{% if post %}
 		<h1>Editar post</h1>
 		<label id="id">Post id:{{post.id}}</label>

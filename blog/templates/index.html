@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 
+{% block head %}
+
+  <script src="{{url_for('static', filename="js/jquery.infinitescroll.min.js")}}"></script>
+
+{% endblock %}
+
 {% block content %}
 
-	<section class="span9 artigo">
+	<section class="span9 artigos">
 
 		{%for post in posts%}
 			<article>

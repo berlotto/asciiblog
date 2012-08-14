@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Text",
+				"TextField"
+			],
+			[
 				"paddin",
 				"padding"
 			],
@@ -59,7 +63,7 @@
 			"file": "blog/models.py",
 			"settings":
 			{
-				"buffer_size": 1273,
+				"buffer_size": 1515,
 				"line_ending": "Unix"
 			}
 		},
@@ -75,24 +79,15 @@
 			"file": "asciiblog.py",
 			"settings":
 			{
-				"buffer_size": 971,
+				"buffer_size": 1369,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "asciiblog.cfg",
-			"settings":
-			{
-				"buffer_size": 55,
-				"line_ending": "Unix",
-				"name": "DEBUG=True"
 			}
 		},
 		{
 			"file": "templates/base.html",
 			"settings":
 			{
-				"buffer_size": 3064,
+				"buffer_size": 3286,
 				"line_ending": "Unix"
 			}
 		},
@@ -117,7 +112,7 @@
 			"file": "blog/templates/new-post.html",
 			"settings":
 			{
-				"buffer_size": 1387,
+				"buffer_size": 2648,
 				"line_ending": "Unix"
 			}
 		},
@@ -125,7 +120,7 @@
 			"file": "blog/__init__.py",
 			"settings":
 			{
-				"buffer_size": 2088,
+				"buffer_size": 2633,
 				"line_ending": "Unix"
 			}
 		},
@@ -149,7 +144,15 @@
 			"file": "blog/templates/one-post.html",
 			"settings":
 			{
-				"buffer_size": 3676,
+				"buffer_size": 3708,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/static/js/new-post.js",
+			"settings":
+			{
+				"buffer_size": 1635,
 				"line_ending": "Unix"
 			}
 		}
@@ -249,7 +252,7 @@
 				"View: Toggle Open Files in Side Bar"
 			]
 		],
-		"width": 575.0
+		"width": 602.0
 	},
 	"console":
 	{
@@ -266,6 +269,11 @@
 	},
 	"file_history":
 	[
+		"/home/berlotto/Desenvolvimento/asciiblog/slugfy.py",
+		"/home/berlotto/Desenvolvimento/asciiblog/asciiblog.cfg",
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/mensagens.html",
+		"/home/berlotto/Desenvolvimento/asciiblog/static/js/home.js",
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/forms.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/templates/index.html",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/static/epiceditor/themes/base/epiceditor.css",
 		"/home/berlotto/ConselhoDeComunicacao.txt",
@@ -451,7 +459,7 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -459,7 +467,7 @@
 					"file": "blog/models.py",
 					"settings":
 					{
-						"buffer_size": 1273,
+						"buffer_size": 1515,
 						"regions":
 						{
 						},
@@ -512,20 +520,21 @@
 					"file": "asciiblog.py",
 					"settings":
 					{
-						"buffer_size": 971,
+						"buffer_size": 1369,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1248,
+								1248
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -535,45 +544,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "asciiblog.cfg",
-					"settings":
-					{
-						"buffer_size": 55,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "DEBUG=True",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "templates/base.html",
 					"settings":
 					{
-						"buffer_size": 3064,
+						"buffer_size": 3286,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1452,
+								1452
 							]
 						],
 						"settings":
@@ -583,13 +565,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 420.0,
+						"translation.y": 210.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "static/css/asciiblog.css",
 					"settings":
 					{
@@ -617,7 +599,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "blog/templates/index.html",
 					"settings":
 					{
@@ -644,19 +626,23 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "blog/templates/new-post.html",
 					"settings":
 					{
-						"buffer_size": 1387,
+						"buffer_size": 2648,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1038,
+								1038
+							],
+							[
+								2610,
+								2610
 							]
 						],
 						"settings":
@@ -671,19 +657,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "blog/__init__.py",
 					"settings":
 					{
-						"buffer_size": 2088,
+						"buffer_size": 2633,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								205,
-								205
+								1615,
+								1615
 							]
 						],
 						"settings":
@@ -692,13 +678,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "blog/static/epiceditor/themes/editor/epic-light.css",
 					"settings":
 					{
@@ -724,7 +710,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "templates/home.html",
 					"settings":
 					{
@@ -751,19 +737,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "blog/templates/one-post.html",
 					"settings":
 					{
-						"buffer_size": 3676,
+						"buffer_size": 3708,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								638,
-								638
+								184,
+								184
 							]
 						],
 						"settings":
@@ -773,6 +759,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "blog/static/js/new-post.js",
+					"settings":
+					{
+						"buffer_size": 1635,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								976,
+								976
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -821,6 +835,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"base",
+				"templates/base.html"
+			],
+			[
+				"home.js",
+				"static/js/home.js"
+			],
+			[
+				"new",
+				"blog/static/js/new-post.js"
+			],
 			[
 				"one",
 				"blog/templates/one-post.html"
@@ -912,10 +938,6 @@
 			[
 				"__init__",
 				"gd/gd/auth/__init__.py"
-			],
-			[
-				"base",
-				"gd/gd/content/templates/base.html"
 			],
 			[
 				"exapi.php",

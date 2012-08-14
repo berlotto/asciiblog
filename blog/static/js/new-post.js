@@ -1,6 +1,3 @@
-enviar = function(){
-	//alert($('#conteudo').val());
-};
 
 var opts = {
   container: 'epiceditor',
@@ -11,7 +8,7 @@ var opts = {
   file: {
     name: 'epiceditor',
     defaultContent: '',
-    autoSave: 100
+    autoSave: false
   },
   theme: {
     base:'/themes/base/epiceditor.css',
@@ -26,6 +23,7 @@ var opts = {
     edit: 79
   }
 };
+
 var epiceditor = new EpicEditor(opts).load();
 epiceditor.on('update', function(){
 	//Este codigo guarda no Hidden o conteudo do editor para ser enviado com o form corretamente.
@@ -36,10 +34,24 @@ $(document).ready(function(){
 	$("#form-new-post").validate();
 });
 
-$('#title').live('keyup', function(){
-	var cloneText = $(this).val().toLowerCase().split(/[ _]/).join('-').replace(/[^a-z0-9-]/g, '');
-	$('#slug').val(cloneText);
-});   
+
+//============================================ PARA AS CHAMADAS DE CRIACAO DO SLUG
+
+//setup call for slug at and of typing ( http://narf.pl/jquery-typing/ )
+$('#title').typing({
+    start: function (event, $elem) {
+        //$elem.css('background', '#fa0');
+    },
+    stop: function (event, $elem) {
+      $.getJSON('/slugfy',{text: $('#title').val()}, function(data){
+          $('#slug').val( data.slug )
+        }
+      );
+    },
+    delay: 1000
+});
+
+//============================================
 
 $(function(){ // wait for document to load
   $('#postfile').MultiFile({
