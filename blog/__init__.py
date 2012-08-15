@@ -20,8 +20,17 @@ blog.register_uploader = register_uploader
 
 @blog.route('/')
 def blog_index():
-	posts = db_session.query(Post).order_by("date_created desc").limit(10)
+	posts = db_session.query(Post).order_by("date_created desc").limit(5)
 	return render_template('index.html',posts=posts)
+
+@blog.route('/more/', methods=['POST','GET'])
+def blog_more():
+	if 'page' in request.args:
+		print "A PAGE=====", request.args['page']
+	if 'page' in request.form:
+		print "B PAGE=====", request.form['page']
+	posts = db_session.query(Post).order_by("date_created desc").limit(3)
+	return render_template('more.html',posts=posts)
 
 @blog.route('/new-post')
 def new_post():

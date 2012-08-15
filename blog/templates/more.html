@@ -1,0 +1,18 @@
+{%for post in posts%}
+	<article>
+	<header>
+    	<div class="input-prepend pull-right">
+		    <span class="add-on"><i class="icon-comment"></i>10</span>
+		    <span class="add-on"><i class="icon-thumbs-up"></i>12</span>
+		    <span class="add-on"><i class="icon-thumbs-down"></i>2</span>
+	    </div>
+		<h1><a href="/blog/article/{{post.slug}}">{{post.title}}</a></h1>
+		<h3>Data: {{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h3>
+	</header>
+	<a href="#" class="thumbnail span2 postbanner">
+		<img src="http://placehold.it/200x150" alt="">
+	</a>
+	<p class="span6 pull-right">{{post.resume}}</p>
+	</article>
+<hr>
+{%endfor%}

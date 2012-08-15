@@ -2,13 +2,13 @@
 
 {% block head %}
 
-  <script src="{{url_for('static', filename="js/jquery.infinitescroll.min.js")}}"></script>
+  <script src="{{url_for('static', filename="js/scrollpagination.js")}}"></script>
 
 {% endblock %}
 
 {% block content %}
 
-	<section class="span9 artigos">
+	<section id="artigos" class="span9 artigos">
 
 		{%for post in posts%}
 			<article>
@@ -28,23 +28,16 @@
 			</article>
 		<hr>
 		{%endfor%}
-
-		<div class="pagination pagination-right">
-			<ul>
-				<li><a href="#">Anterior</a></li>
-				<li class="active">
-					<a href="#">1</a>
-				</li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">...</a></li>
-				<li><a href="#">Próxima</a></li>
-			</ul>
-		</div>
-
 	</section>
+	<div id="pagination" class="span9">
+		<div id="loading" class="offset3"><img src="/static/img/loading.gif"></div>
+		<div id="nomoreresults" class="offset3">Não há mais posts para serem lidos.</div>
+	</div>
 
 {% include 'sidebar.html' %}
 
+{% endblock %}
+
+{% block bottompage %}
+  <script src="{{url_for('blog.static', filename="js/index.js")}}"></script>
 {% endblock %}
