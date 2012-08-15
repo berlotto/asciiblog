@@ -57,3 +57,9 @@ article{
 	margin-right: 5px;
 	clear: both;
 }
+
+#toplink{
+	position: fixed;
+	bottom: 5%;
+	right: 20%;
+}

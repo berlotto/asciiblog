@@ -16,3 +16,6 @@
 	</article>
 <hr>
 {%endfor%}
+{%if fim%}
+		<img src="{{url_for('static', filename='img/finish_flag.png')}}"><div id="nomoreresults" class="offset3">Não há mais posts para serem lidos.</div>
+{%endif%}

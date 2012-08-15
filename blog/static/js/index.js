@@ -1,25 +1,19 @@
-//Example on: http://andersonferminiano.com/jqueryscrollpagination/
 $(function(){ // wait for document to load
 
-  var blogPagination = 1;
-  //Install de infinite scroll
+  //Install de infinite scroll ( tks for http://andersonferminiano.com/jqueryscrollpagination/ )
   $('#artigos').scrollPagination({
       'contentPage': '/blog/more/', // the url you are fetching the results
-      'contentData': {
-        page: blogPagination
-      }, // these are the variables you can pass to the request, for example: children().size() to know which page you are
+      'contentData': {}, // these are the variables you can pass to the request, for example: children().size() to know which page you are
       'scrollTarget': $(window), // who gonna scroll? in this example, the full window
       'heightOffset': 5, // it gonna request when scroll is 10 pixels before the page ends
       'beforeLoad': function(){ // before load function, you can display a preloader div
           $('#loading').fadeIn();
-          blogPagination += 1;
-          $(this).opts.contentData = {page: blogPagination};
       },
       'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
            $('#loading').fadeOut();
            var i = 0;
            $(elementsLoaded).fadeInWithDelay();
-           if ($('#artigos').children().size() > 100){ // if more than 100 results already loaded, then stop pagination (only for testing)
+           if ( $('#nomoreresults').length ){ // if no more posts, then #nomereresults will be returned
               $('#nomoreresults').fadeIn();
               $('#artigos').stopScrollPagination();
            }
@@ -36,5 +30,31 @@ $(function(){ // wait for document to load
   };
 
   $('#nomoreresults').fadeOut();
+
+
+  //CONTROL FOR ICON TO SCROLL TO TOP ( tks for http://webdesignerwall.com/tutorials/animated-scroll-to-top )
+
+  // hide #back-top first
+  $("#toplink").hide();
+
+  // fade in #back-top
+  $(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('#toplink').fadeIn();
+      } else {
+        $('#toplink').fadeOut();
+      }
+    });
+
+    // scroll body to 0px on click
+    $('#toplink a').click(function () {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 800);
+      return false;
+    });
+  });
+
 
 });

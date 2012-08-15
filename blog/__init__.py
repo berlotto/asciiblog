@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from flask import Blueprint, render_template, abort, flash, request, url_for, redirect
+from flask import Blueprint, render_template, abort, flash, request, url_for, redirect, session, make_response
 from models import Post, Comment, Like, Link
 from database import db_session
 from datetime import datetime
@@ -21,16 +21,24 @@ blog.register_uploader = register_uploader
 @blog.route('/')
 def blog_index():
 	posts = db_session.query(Post).order_by("date_created desc").limit(5)
-	return render_template('index.html',posts=posts)
+	resp = make_response( render_template('index.html',posts=posts) )
+	resp.set_cookie('blog_page', 1)
+	return resp
 
 @blog.route('/more/', methods=['POST','GET'])
 def blog_more():
-	if 'page' in request.args:
-		print "A PAGE=====", request.args['page']
-	if 'page' in request.form:
-		print "B PAGE=====", request.form['page']
+	page = int(request.cookies.get('blog_page')) + 1
+	fim = False
+	print "SESSION PAGE:", page
+
+	if page == 5:
+		fim = True
+
 	posts = db_session.query(Post).order_by("date_created desc").limit(3)
-	return render_template('more.html',posts=posts)
+	resp = make_response( render_template('more.html',posts=posts,fim=fim) )
+
+	resp.set_cookie('blog_page', page)
+	return resp
 
 @blog.route('/new-post')
 def new_post():

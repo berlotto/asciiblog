@@ -28,13 +28,18 @@
 			</article>
 		<hr>
 		{%endfor%}
-	</section>
-	<div id="pagination" class="span9">
-		<div id="loading" class="offset3"><img src="/static/img/loading.gif"></div>
-		<div id="nomoreresults" class="offset3">Não há mais posts para serem lidos.</div>
-	</div>
 
-{% include 'sidebar.html' %}
+	</section>
+
+	{% include 'sidebar.html' %}
+
+	<section id="pagination" class="span9">
+		<div id="loading" class="offset3"><img src="/static/img/loading.gif"></div>
+	</section>
+
+	<div id="toplink">
+		<a href="#top"><img src="{{url_for('static', filename='img/arrow_top.png')}}"></a>
+	</div>
 
 {% endblock %}
 
