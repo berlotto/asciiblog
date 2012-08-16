@@ -52,7 +52,7 @@
 		<hr>
 		<div class="row">
 			<div class="span4">
-				<h1>Últimos posts</h1>
+				<h3>Últimos posts</h3>
 				<ul>
 					{%for post in posts%}
 					<li><a href="{{url_for('blog.view_post',slug=post.slug)}}">{{post.title}}</a></li>
@@ -61,15 +61,12 @@
 				<a id="more-posts" href="{{url_for('blog.blog_index')}}" class="btn btn-small span3">Veja todos</a>
 			</div>
 			<div class="span4">
-				<h1>Últimos comentários</h1>
-				<ul>
-					{%for comment in comments%}
-					<li>{{comment.title}}</li>
-					{%endfor%}
-				</ul>
+				<h3>Ultima foto do Flickr</h3>
+				{{flickr_photo|safe}}
+				</a>
 			</div>
 			<div class="span4">
-				<h1>Assine</h1>
+				<h3>Assine</h3>
 				<p>Informe seu e-mail para receber informações peródicas sobre novos conteúdos no site</P>
 			    <form class="well form-inline">
 				    <input type="text" class="input-medium search-query">
@@ -77,22 +74,26 @@
 			    </form>
 			</div>
 		</div>
+		<hr>
 		<div class="row">
 			<div class="span4">
-				<h3>Ultima foto do Instagram</h3>
+				<h3>Ver o que colocar aqui</h3>
 				<a href="#" class="thumbnail">
 					<img src="http://placehold.it/250x190" alt="">
 				</a>
 			</div>
 			<div class="span4">
-				<h3>Ultima foto do Flickr</h3>
-				{{flickr_photo|safe}}
-				</a>
+				<h3>Últimos comentários</h3>
+				<ul>
+					{%for comment in comments%}
+					<li>{{comment.title}}</li>
+					{%endfor%}
+				</ul>
 			</div>
 			<div class="span4">
 				<h3>Últimos twitts</h3>
 				{%for twitt in twitts%}
-				<p><i class="icon-asterisk"></i><a href="http://twitter.com/berlottocdd/status/{{twitt.id}}">{{twitt.text}}</a>
+				<p><i class="icon-asterisk"></i><a href="http://twitter.com/berlottocdd/status/{{twitt.id}}">{{twitt.text}}</a></p>
 				{%endfor%}
 				<a href="https://twitter.com/berlottocdd" class="twitter-follow-button" data-show-count="false" data-lang="pt" data-size="large">Seguir @berlottocdd</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

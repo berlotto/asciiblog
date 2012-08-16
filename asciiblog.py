@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from flask import Flask, render_template, request, jsonify
+from werkzeug.contrib.cache import MemcachedCache, SimpleCache
 from database import db_session
 import markdown
 from json import loads
@@ -15,6 +16,10 @@ from blog.models import Post, Comment
 #========================================= CONFIGURATION
 app = Flask(__name__)
 app.config.from_pyfile('asciiblog.cfg')
+
+#Deve ser configuravel atraves do asciiblog.cfg
+cache = SimpleCache()
+#cache = MemcachedCache(['127.0.0.1:11211'])
 
 TWITTER_JSON_TIMELINE_URL = \
 	"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=berlottocdd&include_rts=true&count=5"
@@ -60,7 +65,10 @@ def index():
 	#get last comments
 	comments = db_session.query(Comment).order_by("date_created desc").limit(10)
 	#last photo of flickr from RSS
-	d = feedparser.parse('http://api.flickr.com/services/feeds/photos_public.gne?id=51882400@N00&lang=pt-br&format=rss_200')
+	d = cache.get('twitter_feed')
+	if not d:
+		d = feedparser.parse('http://api.flickr.com/services/feeds/photos_public.gne?id=51882400@N00&lang=pt-br&format=rss_200')
+		cache.set('twitter_feed',d, timeout=5 * 60)
 	#last_photo = d['entries'][0]['media_thumbnail'][0]['url']
 	last_photo = d['entries'][0]['summary']
 	return render_template('home.html', posts=posts, comments=comments, twitts=twitts, flickr_photo=last_photo)

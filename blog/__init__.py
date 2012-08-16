@@ -14,7 +14,6 @@ uploaded_files = None
 def register_uploader(obj):
 	global uploaded_files
 	uploaded_files = obj
-	print "Gravado o salvador!"
 
 blog.register_uploader = register_uploader
 

@@ -59,6 +59,54 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "asciiblog.py",
+			"settings":
+			{
+				"buffer_size": 2645,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "asciiblog.cfg",
+			"settings":
+			{
+				"buffer_size": 309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/__init__.py",
+			"settings":
+			{
+				"buffer_size": 3071,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/asciiblog.css",
+			"settings":
+			{
+				"buffer_size": 856,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/home.html",
+			"settings":
+			{
+				"buffer_size": 3835,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/one-post.html",
+			"settings":
+			{
+				"buffer_size": 3758,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -172,6 +220,7 @@
 	},
 	"file_history":
 	[
+		"/home/berlotto/Desenvolvimento/asciiblog/teste-instagram.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/models.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/database.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/asciiblog.py",
@@ -262,7 +311,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/home/berlotto/Desenvolvimento/GabineteDigital/,*.js",
@@ -281,6 +330,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"print",
 			"    <div class=\"row-fluid\">\n",
 			"        </",
 			"String",
@@ -379,8 +429,170 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "asciiblog.py",
+					"settings":
+					{
+						"buffer_size": 2645,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1980,
+								1980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "asciiblog.cfg",
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "blog/__init__.py",
+					"settings":
+					{
+						"buffer_size": 3071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								477,
+								477
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "static/css/asciiblog.css",
+					"settings":
+					{
+						"buffer_size": 856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								855,
+								855
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 426.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/home.html",
+					"settings":
+					{
+						"buffer_size": 3835,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								426,
+								426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "blog/templates/one-post.html",
+					"settings":
+					{
+						"buffer_size": 3758,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2706,
+								2706
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 516.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -426,6 +638,18 @@
 		"selected_items":
 		[
 			[
+				"one",
+				"blog/templates/one-post.html"
+			],
+			[
+				"home",
+				"templates/home.html"
+			],
+			[
+				"ascc",
+				"asciiblog.cfg"
+			],
+			[
 				"hom",
 				"templates/home.html"
 			],
@@ -446,10 +670,6 @@
 				"static/js/scrollpagination.js"
 			],
 			[
-				"home",
-				"templates/home.html"
-			],
-			[
 				"base",
 				"templates/base.html"
 			],
@@ -460,10 +680,6 @@
 			[
 				"new",
 				"blog/static/js/new-post.js"
-			],
-			[
-				"one",
-				"blog/templates/one-post.html"
 			],
 			[
 				"epicl",

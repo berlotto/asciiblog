@@ -85,15 +85,18 @@ edit = function(url){
 				</div>
 			</div>
 
-			<form id="form-comentario" method="POST" action="{{url_for('blog.save_comment')}}" class="well form-vertical">
-				<h3>Enviar comentário</h3>
-				<label for="title">Título:</label><input type="text" id="title" name="title" class="span6">
-				<label for="nome">Nome:</label><input type="text" id="name" name="name" class="span6">
-				<label for="email">Email:</label><input type="text" id="email" name="email" class="span6">
-				<label for="content">Comentário:</label>
-				<textarea id="content" name="content" class="span8"></textarea>
-				<input type="submit" value="Comentar" class="btn pull-right">
-			</form>
+			<div id="div-comment">
+				
+				<form id="form-comentario" method="POST" action="{{url_for('blog.save_comment')}}" class="well form-vertical">
+					<h3>Enviar comentário</h3>
+					<label for="title">Título:</label><input type="text" id="title" name="title" class="span6">
+					<label for="nome">Nome:</label><input type="text" id="name" name="name" class="span6">
+					<label for="email">Email:</label><input type="text" id="email" name="email" class="span6">
+					<label for="content">Comentário:</label>
+					<textarea id="content" name="content" class="span8"></textarea>
+					<input type="submit" value="Comentar" class="btn pull-right">
+				</form>
+			</div>
 
 		<hr>
 
