@@ -3,9 +3,25 @@
 {% block head %}
 
 <!-- EpicEditor -->
-<script type="text/javascript" src="{{url_for('blog.static', filename="epiceditor/js/epiceditor.min.js")}}"></script>
+<!-- <script type="text/javascript" src="{{url_for('blog.static', filename="epiceditor/js/epiceditor.min.js")}}"></script> -->
+
+<!-- Editor Markdown -->
+<!-- http://dillinger.io/ -->
+<!-- http://ace.ajax.org -->
+<script type="text/javascript" src="{{url_for('static', filename="ace-editor/src-min-noconflict/ace.js")}}"></script>
+
 <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 
+<!-- http://softwaremaniacs.org/soft/highlight/en/ -->
+
+<style type="text/css">
+#editor{
+	height: 300px;
+	margin: 0;
+    position: relative;
+    padding: 0px !important;
+}
+</style>
 
 <script src="{{url_for('static', filename="file-upload/jquery.MultiFile.pack.js")}}"></script>
 {% endblock %}
@@ -15,12 +31,13 @@
 
 {% include 'mensagens.html' %}
 
+<!-- http://www.tidbits.com.br/como-fazer-accordion-simples-com-jquery-em-5-linhas-de-codigo -->
 	<form id="form-new-post" class="well form-horizontal" enctype="multipart/form-data" action="{{url_for('blog.save_post')}}" method="POST">
 	{% if post %}
 		<h1>Editar post</h1>
 		<label id="id">Post id:{{post.id}}</label>
 		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150" value="{{post.title}}"><br>&nbsp;
-		<div id="epiceditor">value="{{post.content}}"</div>
+		<pre class="span7" id="editor">{{post.content}}</pre>
 		<input type="hidden" id="content" name="content" value="{{post.content}}">
 		<label for="resume">Resumo</label><textarea class="span12 required" id="resume" name="resume">{{post.resume}}</textarea>
 		<label class="checkbox" for="featured"><input type="checkbox" value="featured" id="featured" name="featured" {%if post.featured%}checked="checked"{%endif%}>Post destacado</label>
@@ -31,7 +48,7 @@
 	{% else %}
 		<h1>Novo post</h1>
 		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150"><br>&nbsp;
-		<div id="epiceditor"></div>
+		<pre id="editor"></pre>
 		<input type="hidden" id="content" name="content" value="">
 		<label for="resume">Resumo</label><textarea class="span12 required" id="resume" name="resume"></textarea>
 		<label class="checkbox" for="featured"><input type="checkbox" value="featured" id="featured" name="featured">Post destacado</label>

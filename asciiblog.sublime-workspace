@@ -106,6 +106,22 @@
 				"buffer_size": 3758,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "blog/templates/new-post.html",
+			"settings":
+			{
+				"buffer_size": 2941,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/static/js/new-post.js",
+			"settings":
+			{
+				"buffer_size": 1005,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -311,7 +327,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			"/home/berlotto/Desenvolvimento/GabineteDigital/,*.js",
@@ -429,7 +445,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -592,6 +608,61 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "blog/templates/new-post.html",
+					"settings":
+					{
+						"buffer_size": 2941,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								579,
+								579
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "blog/static/js/new-post.js",
+					"settings":
+					{
+						"buffer_size": 1005,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		}
@@ -638,6 +709,14 @@
 		"selected_items":
 		[
 			[
+				"new-post",
+				"blog/static/js/new-post.js"
+			],
+			[
+				"new",
+				"blog/templates/new-post.html"
+			],
+			[
 				"one",
 				"blog/templates/one-post.html"
 			],
@@ -676,10 +755,6 @@
 			[
 				"home.js",
 				"static/js/home.js"
-			],
-			[
-				"new",
-				"blog/static/js/new-post.js"
 			],
 			[
 				"epicl",

@@ -1,34 +1,6 @@
-
-var opts = {
-  container: 'epiceditor',
-  basePath: '/blog/static/epiceditor',
-  clientSideStorage: true,
-  localStorageName: 'berlottonetpost',
-  parser: marked,
-  file: {
-    name: 'epiceditor',
-    defaultContent: '',
-    autoSave: false
-  },
-  theme: {
-    base:'/themes/base/epiceditor.css',
-    preview:'/themes/preview/github.css',
-    editor:'/themes/editor/epic-dark.css'
-  },
-  focusOnLoad: false,
-  shortcut: {
-    modifier: 18,
-    fullscreen: 70,
-    preview: 80,
-    edit: 79
-  }
-};
-
-var epiceditor = new EpicEditor(opts).load();
-epiceditor.on('update', function(){
-	//Este codigo guarda no Hidden o conteudo do editor para ser enviado com o form corretamente.
-	$('#conteudo').val( epiceditor.getElement('editor').body.innerHTML );
-})
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/clouds");
+editor.getSession().setMode("ace/mode/markdown");
 
 $(document).ready(function(){
 	$("#form-new-post").validate();
