@@ -1,0 +1,20 @@
+.artigo header{
+	background-color: #fff;
+	color: #000;
+	padding: 10px;
+	border-radius: 4px 4px 4px 4px;
+	margin-bottom: 5px;
+	text-shadow: 2px 2px #cccccc;
+}
+.artigo article{
+	width: 100%;
+}
+
+.artigo .content{
+	padding: 10px;
+	/*background-image: url("../img/notebook_paper_200x200.gif");*/
+	background: transparent;
+	border: 0px dashed #c5c5c5;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: -4px -4px 10px #ccc;
+}

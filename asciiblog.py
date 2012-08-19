@@ -1,21 +1,23 @@
 # -*- encoding: utf-8 -*-
 
 from flask import Flask, render_template, request, jsonify
+from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug.contrib.cache import MemcachedCache, SimpleCache
-from database import db_session
+# from database import db_session
+from sqlalchemy import func
+from sqlalchemy.sql.operators import ColumnOperators
 import markdown
 from json import loads
 from urllib import urlopen
 import flickrapi
 import feedparser
-
-#Blueprint Applications
-from blog import blog
-from blog.models import Post, Comment
+import random
 
 #========================================= CONFIGURATION
 app = Flask(__name__)
 app.config.from_pyfile('asciiblog.cfg')
+
+db = SQLAlchemy(app)
 
 #Deve ser configuravel atraves do asciiblog.cfg
 cache = SimpleCache()
@@ -23,6 +25,10 @@ cache = SimpleCache()
 
 TWITTER_JSON_TIMELINE_URL = \
 	"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=berlottocdd&include_rts=true&count=5"
+
+#========================================= Blueprint Applications
+from blog import blog
+from blog.models import Post, Comment
 
 #========================================= UPLOADS
 from flaskext.uploads import UploadSet, configure_uploads, IMAGES, UploadNotAllowed
@@ -59,11 +65,20 @@ def get_twitts():
 @app.route('/')
 def index():
 	#get last tweets
-	twitts = get_twitts()
+	twitts = cache.get('twitts')
+	if not twitts:
+		twitts = get_twitts()
+		cache.set('twitts', twitts)
 	#get last posts
-	posts = db_session.query(Post).order_by("date_created desc").limit(10)
+	posts = cache.get('cache')
+	if not posts:
+		posts = Post.query.order_by("date_created desc").limit(10).all()
+		cache.set('posts', posts)
 	#get last comments
-	comments = db_session.query(Comment).order_by("date_created desc").limit(10)
+	comments = cache.get('comments')
+	if not comments:
+		comments = Comment.query.order_by("date_created desc").limit(10).all()
+		cache.set('comments', comments)
 	#last photo of flickr from RSS
 	d = cache.get('twitter_feed')
 	if not d:
@@ -71,7 +86,16 @@ def index():
 		cache.set('twitter_feed',d, timeout=5 * 60)
 	#last_photo = d['entries'][0]['media_thumbnail'][0]['url']
 	last_photo = d['entries'][0]['summary']
-	return render_template('home.html', posts=posts, comments=comments, twitts=twitts, flickr_photo=last_photo)
+	#random posts
+	max_post_id = cache.get('max_post_id')
+	if not max_post_id:
+		max_post_id = db.session.query(func.count(Post.id)).first()[0]
+		cache.set('max_post_id',max_post_id)
+	random_ids = list(set([random.randint(1,max_post_id) for x in xrange(10)])) #10 ids aleatorios para o array
+	#this have max 10 posts, and not set in cache!
+	random_posts = Post.query.filter(Post.id.in_(random_ids)).all()
+	return render_template('home.html', posts=posts, comments=comments, twitts=twitts, 
+		                                flickr_photo=last_photo, random_posts=random_posts)
 
 @app.route('/slugfy/')
 def slugfy():

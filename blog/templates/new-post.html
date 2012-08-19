@@ -5,6 +5,11 @@
 <!-- EpicEditor -->
 <!-- <script type="text/javascript" src="{{url_for('blog.static', filename="epiceditor/js/epiceditor.min.js")}}"></script> -->
 
+<!-- Jquery AJaxForm http://jquery.malsup.com/form -->
+<script type="text/javascript" src="{{url_for('static', filename="js/jquery.form.js")}}"></script>
+<!-- http://www.malsup.com/jquery/block/ -->
+<script type="text/javascript" src="{{url_for('static', filename="js/jquery.blockUI.js")}}"></script>
+
 <!-- Editor Markdown -->
 <!-- http://dillinger.io/ -->
 <!-- http://ace.ajax.org -->
@@ -28,16 +33,17 @@
 
 {% block content %}
 
-
+	<div id="retorno"></div>
 {% include 'mensagens.html' %}
 
 <!-- http://www.tidbits.com.br/como-fazer-accordion-simples-com-jquery-em-5-linhas-de-codigo -->
 	<form id="form-new-post" class="well form-horizontal" enctype="multipart/form-data" action="{{url_for('blog.save_post')}}" method="POST">
 	{% if post %}
-		<h1>Editar post</h1>
+		<h1 id="acao">Editar post</h1>
 		<label id="id">Post id:{{post.id}}</label>
+		<input type="hidden" name="id" value="{{post.id}}">
 		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150" value="{{post.title}}"><br>&nbsp;
-		<pre class="span7" id="editor">{{post.content}}</pre>
+		<pre id="editor">{{post.content}}</pre>
 		<input type="hidden" id="content" name="content" value="{{post.content}}">
 		<label for="resume">Resumo</label><textarea class="span12 required" id="resume" name="resume">{{post.resume}}</textarea>
 		<label class="checkbox" for="featured"><input type="checkbox" value="featured" id="featured" name="featured" {%if post.featured%}checked="checked"{%endif%}>Post destacado</label>
@@ -46,7 +52,7 @@
 		<div id="postfile-list"></div>
 		<img src="{{post.picture}}" class="img-featured">
 	{% else %}
-		<h1>Novo post</h1>
+		<h1 id="acao">Novo post</h1>
 		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150"><br>&nbsp;
 		<pre id="editor"></pre>
 		<input type="hidden" id="content" name="content" value="">

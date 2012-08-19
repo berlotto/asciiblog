@@ -2,6 +2,7 @@
 
 {% block head %}
 <script src="http://malsup.github.com/jquery.form.js"></script>
+<link rel="stylesheet" href="{{ url_for('blog.static', filename='css/one-post.css') }}"/>
 <script type="text/javascript">
 edit = function(url){
 	window.location = url;
@@ -26,10 +27,12 @@ edit = function(url){
 				<h1>{{post.title}}</h1>
 				<h3>Data: {{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h3>
 			</header>
+			{% if post.picture %}
 			<a href="#" class="thumbnail span2 postbanner">
 				<img src="http://placehold.it/200x150" alt="">
 			</a>
-			<p class="span6 pull-right">{{post.content|translate_markdown}}</p>
+			{%endif%}
+			<div class="content">{{post.content|translate_markdown}}</div>
 			</article>
 			<br><br>
 			<div class="input-prepend">

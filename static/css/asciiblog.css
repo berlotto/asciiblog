@@ -8,7 +8,7 @@ body{
 	padding: 10px;
 }
 header {
-	height: 100px;
+	/*height: 100px;*/
 }
 
 .container{
@@ -64,3 +64,9 @@ article{
 	right: 20%;
 }
 
+label .error{
+	background-color: #FF0000;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 3px;
+}
