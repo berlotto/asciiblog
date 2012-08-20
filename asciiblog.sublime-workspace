@@ -107,7 +107,7 @@
 			"file": "blog/templates/one-post.html",
 			"settings":
 			{
-				"buffer_size": 3881,
+				"buffer_size": 3958,
 				"line_ending": "Unix"
 			}
 		},
@@ -115,7 +115,7 @@
 			"file": "blog/templates/new-post.html",
 			"settings":
 			{
-				"buffer_size": 3757,
+				"buffer_size": 3884,
 				"line_ending": "Unix"
 			}
 		},
@@ -473,7 +473,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -615,15 +615,15 @@
 					"file": "blog/templates/one-post.html",
 					"settings":
 					{
-						"buffer_size": 3881,
+						"buffer_size": 3958,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								862,
+								862
 							]
 						],
 						"settings":
@@ -642,15 +642,15 @@
 					"file": "blog/templates/new-post.html",
 					"settings":
 					{
-						"buffer_size": 3757,
+						"buffer_size": 3884,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1822,
-								1822
+								3621,
+								3621
 							]
 						],
 						"settings":
@@ -768,7 +768,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 105.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

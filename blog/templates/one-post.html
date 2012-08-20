@@ -23,6 +23,7 @@ edit = function(url){
 				    <button class="btn"><i class="icon-thumbs-up"></i>12</button>
 				    <button class="btn"><i class="icon-thumbs-down"></i>2</button>
 				    <button class="btn" onclick="edit('{{url_for('blog.edit_post', post_id=post.id)}}');"><i class="icon-edit"></i></button>
+				    <button class="btn"><i class="icon-download-alt"></i>Source</button>
 			    </div>
 				<h1>{{post.title}}</h1>
 				<h3>Data: {{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h3>

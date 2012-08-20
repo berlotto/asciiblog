@@ -64,8 +64,9 @@
 		<label for="postfile">Banner (use este campo para enviar o banner)</label><input type="file" id="postfile" name="postfile">
 		<div id="postfile-list"></div>
 	{% endif %}
-
-		<input type="submit" id="btn-enviar" class="btn btn-large btn-primary pull-right" value="Salvar">
+		<br>
+		<input type="submit" id="btn-enviar" class="btn btn-large btn-primary pull-right" onclick="javascript: return false;" value="Salvar">
+		<button id="btn-help-edit" class="btn btn-large btn-info pull-left">Ajuda</button>
 	</form>
 
 {% endblock %}
