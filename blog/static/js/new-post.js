@@ -8,7 +8,7 @@ editor.on('change', function(){
 
 
 showProcessing = function(){
-  $.blockUI({ message: '<h1><img src="/static/img/loading.gif" /> Salvando os dados...</h1>' });
+  $.blockUI({ message: '<h3><img src="/static/img/loading.gif" /><br>Salvando os dados...</h3>' });
 }
 
 processReturn = function(data){

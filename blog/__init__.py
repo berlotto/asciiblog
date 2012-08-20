@@ -107,16 +107,19 @@ def save_post():
 		if add:
 			db.session.add(post)
 
-		db.session.commit()
 
 		try:
 			global uploaded_files
 			photo = request.files.get('postfile')
 			if photo:
 				filename = uploaded_files.save(photo)
+			post.picture = filename
+			db.session.add(post)
+			
 		except UploadNotAllowed:
 			flash("The upload was not allowed")
 
+		db.session.commit()
 		# flash('Post salvo com sucesso')
 		# return redirect(url_for('blog.view_post',  slug=slug))
 
