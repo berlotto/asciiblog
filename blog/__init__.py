@@ -127,8 +127,8 @@ def save_post():
 			photo = request.files.get('postfile')
 			if photo:
 				filename = uploaded_files.save(photo)
-			post.picture = filename
-			db.session.add(post)
+				post.picture = filename
+				db.session.add(post)
 			
 		except UploadNotAllowed:
 			flash("The upload was not allowed")

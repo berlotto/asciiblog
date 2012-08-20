@@ -83,7 +83,7 @@
 			"file": "blog/__init__.py",
 			"settings":
 			{
-				"buffer_size": 4275,
+				"buffer_size": 4277,
 				"line_ending": "Unix"
 			}
 		},
@@ -107,7 +107,7 @@
 			"file": "blog/templates/one-post.html",
 			"settings":
 			{
-				"buffer_size": 3958,
+				"buffer_size": 3828,
 				"line_ending": "Unix"
 			}
 		},
@@ -115,7 +115,7 @@
 			"file": "blog/templates/new-post.html",
 			"settings":
 			{
-				"buffer_size": 3884,
+				"buffer_size": 3763,
 				"line_ending": "Unix"
 			}
 		},
@@ -148,6 +148,30 @@
 			"settings":
 			{
 				"buffer_size": 3303,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/static/css/one-post.css",
+			"settings":
+			{
+				"buffer_size": 497,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/index.html",
+			"settings":
+			{
+				"buffer_size": 1299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/more.html",
+			"settings":
+			{
+				"buffer_size": 798,
 				"line_ending": "Unix"
 			}
 		}
@@ -374,6 +398,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<p>",
+			"</p>",
+			"<p>",
 			"print",
 			"    <div class=\"row-fluid\">\n",
 			"        </",
@@ -473,7 +500,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 12,
 			"sheets":
 			[
 				{
@@ -534,15 +561,15 @@
 					"file": "blog/__init__.py",
 					"settings":
 					{
-						"buffer_size": 4275,
+						"buffer_size": 4277,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3639,
+								3639
 							]
 						],
 						"settings":
@@ -551,7 +578,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1305.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -615,15 +642,15 @@
 					"file": "blog/templates/one-post.html",
 					"settings":
 					{
-						"buffer_size": 3958,
+						"buffer_size": 3828,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								862,
-								862
+								1038,
+								1038
 							]
 						],
 						"settings":
@@ -632,7 +659,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 156.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -642,15 +669,15 @@
 					"file": "blog/templates/new-post.html",
 					"settings":
 					{
-						"buffer_size": 3884,
+						"buffer_size": 3763,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3621,
-								3621
+								3584,
+								3584
 							]
 						],
 						"settings":
@@ -772,6 +799,87 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "blog/static/css/one-post.css",
+					"settings":
+					{
+						"buffer_size": 497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								380,
+								380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "blog/templates/index.html",
+					"settings":
+					{
+						"buffer_size": 1299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								667,
+								667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "blog/templates/more.html",
+					"settings":
+					{
+						"buffer_size": 798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								412,
+								412
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		}
@@ -818,6 +926,18 @@
 		"selected_items":
 		[
 			[
+				"more",
+				"blog/templates/more.html"
+			],
+			[
+				"inde",
+				"blog/templates/index.html"
+			],
+			[
+				"one",
+				"blog/static/css/one-post.css"
+			],
+			[
 				"base",
 				"templates/base.html"
 			],
@@ -838,10 +958,6 @@
 				"blog/templates/new-post.html"
 			],
 			[
-				"one",
-				"blog/templates/one-post.html"
-			],
-			[
 				"home",
 				"templates/home.html"
 			],
@@ -856,10 +972,6 @@
 			[
 				"ascii",
 				"static/css/asciiblog.css"
-			],
-			[
-				"more",
-				"blog/templates/more.html"
 			],
 			[
 				"side",
