@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"alig",
+				"vertical-align"
+			],
+			[
 				"Text",
 				"TextField"
 			],
@@ -63,7 +67,7 @@
 			"file": "asciiblog.py",
 			"settings":
 			{
-				"buffer_size": 2645,
+				"buffer_size": 3538,
 				"line_ending": "Unix"
 			}
 		},
@@ -71,7 +75,7 @@
 			"file": "asciiblog.cfg",
 			"settings":
 			{
-				"buffer_size": 309,
+				"buffer_size": 441,
 				"line_ending": "Unix"
 			}
 		},
@@ -79,7 +83,7 @@
 			"file": "blog/__init__.py",
 			"settings":
 			{
-				"buffer_size": 3071,
+				"buffer_size": 4275,
 				"line_ending": "Unix"
 			}
 		},
@@ -87,7 +91,7 @@
 			"file": "static/css/asciiblog.css",
 			"settings":
 			{
-				"buffer_size": 856,
+				"buffer_size": 964,
 				"line_ending": "Unix"
 			}
 		},
@@ -95,7 +99,7 @@
 			"file": "templates/home.html",
 			"settings":
 			{
-				"buffer_size": 3835,
+				"buffer_size": 4348,
 				"line_ending": "Unix"
 			}
 		},
@@ -103,7 +107,7 @@
 			"file": "blog/templates/one-post.html",
 			"settings":
 			{
-				"buffer_size": 3758,
+				"buffer_size": 3881,
 				"line_ending": "Unix"
 			}
 		},
@@ -111,7 +115,7 @@
 			"file": "blog/templates/new-post.html",
 			"settings":
 			{
-				"buffer_size": 2941,
+				"buffer_size": 3757,
 				"line_ending": "Unix"
 			}
 		},
@@ -119,7 +123,31 @@
 			"file": "blog/static/js/new-post.js",
 			"settings":
 			{
-				"buffer_size": 1005,
+				"buffer_size": 1902,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/models.py",
+			"settings":
+			{
+				"buffer_size": 1821,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/list-posts.html",
+			"settings":
+			{
+				"buffer_size": 2026,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/base.html",
+			"settings":
+			{
+				"buffer_size": 3303,
 				"line_ending": "Unix"
 			}
 		}
@@ -445,7 +473,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 10,
 			"sheets":
 			[
 				{
@@ -453,15 +481,15 @@
 					"file": "asciiblog.py",
 					"settings":
 					{
-						"buffer_size": 2645,
+						"buffer_size": 3538,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1980,
-								1980
+								0,
+								0
 							]
 						],
 						"settings":
@@ -480,7 +508,7 @@
 					"file": "asciiblog.cfg",
 					"settings":
 					{
-						"buffer_size": 309,
+						"buffer_size": 441,
 						"regions":
 						{
 						},
@@ -506,15 +534,15 @@
 					"file": "blog/__init__.py",
 					"settings":
 					{
-						"buffer_size": 3071,
+						"buffer_size": 4275,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								477,
-								477
+								0,
+								0
 							]
 						],
 						"settings":
@@ -533,15 +561,15 @@
 					"file": "static/css/asciiblog.css",
 					"settings":
 					{
-						"buffer_size": 856,
+						"buffer_size": 964,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								855,
-								855
+								0,
+								0
 							]
 						],
 						"settings":
@@ -560,15 +588,15 @@
 					"file": "templates/home.html",
 					"settings":
 					{
-						"buffer_size": 3835,
+						"buffer_size": 4348,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								426,
-								426
+								2422,
+								2422
 							]
 						],
 						"settings":
@@ -587,15 +615,15 @@
 					"file": "blog/templates/one-post.html",
 					"settings":
 					{
-						"buffer_size": 3758,
+						"buffer_size": 3881,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2706,
-								2706
+								0,
+								0
 							]
 						],
 						"settings":
@@ -604,7 +632,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 516.0,
+						"translation.y": 156.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -614,15 +642,15 @@
 					"file": "blog/templates/new-post.html",
 					"settings":
 					{
-						"buffer_size": 2941,
+						"buffer_size": 3757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								579,
-								579
+								1822,
+								1822
 							]
 						],
 						"settings":
@@ -631,7 +659,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -641,7 +669,7 @@
 					"file": "blog/static/js/new-post.js",
 					"settings":
 					{
-						"buffer_size": 1005,
+						"buffer_size": 1902,
 						"regions":
 						{
 						},
@@ -660,6 +688,87 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "blog/models.py",
+					"settings":
+					{
+						"buffer_size": 1821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								694,
+								694
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "blog/templates/list-posts.html",
+					"settings":
+					{
+						"buffer_size": 2026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								189,
+								189
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "templates/base.html",
+					"settings":
+					{
+						"buffer_size": 3303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2123,
+								2123
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -709,6 +818,18 @@
 		"selected_items":
 		[
 			[
+				"base",
+				"templates/base.html"
+			],
+			[
+				"posts",
+				"blog/templates/list-posts.html"
+			],
+			[
+				"model",
+				"blog/models.py"
+			],
+			[
 				"new-post",
 				"blog/static/js/new-post.js"
 			],
@@ -747,10 +868,6 @@
 			[
 				"scro",
 				"static/js/scrollpagination.js"
-			],
-			[
-				"base",
-				"templates/base.html"
 			],
 			[
 				"home.js",

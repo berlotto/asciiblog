@@ -16,6 +16,7 @@ class Post(db.Model):
 	date_updated = db.Column(db.DateTime)
 	picture	= db.Column(db.Integer, db.ForeignKey("file.id")) #id if File that is used for banner
 	featured = db.Column(db.String(1)) #may be 'S' or ('N','')
+	tags = db.Column(db.String(4000))
 
 	def __repr__(self):
 		return '<Post %r>' % (self.slug)

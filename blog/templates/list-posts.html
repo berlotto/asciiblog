@@ -2,6 +2,12 @@
 
 {% block head %}
 <script src="http://malsup.github.com/jquery.form.js"></script>
+<style type="text/css">
+td .center{
+	text-align: center;
+	vertical-align: middle;
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -19,6 +25,7 @@
 		<table id="listagem-post" class="table table-striped table-bordered table-condensed">
 			<tr>
 				<th>#</th>
+				<th>Featured</th>
 				<th>Id</th>
 				<th>Titulo</th>
 				<th>Criado em</th>
@@ -32,9 +39,16 @@
 					<a href="{{url_for('blog.edit_post', post_id=post.id)}}"><i class="icon-edit"></i></a>
 					<a href="{{url_for('blog.view_post', slug=post.slug)}}"><i class="icon-eye-open"></i></a>
 				</td>
+				<td class="center">
+				{%if post.featured == 'N'%}
+				<input type="checkbox">
+				{%else%}
+				<input type="checkbox" checked="checked">
+				{%endif%}
+				</td>
 				<td>{{post.id}}</td>
 				<td>{{post.title}}</td>
-				<td>{{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</td>
+				<td>{{post.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</td>
 			</tr>
 		{% endfor %}
 		</table>
