@@ -3,11 +3,16 @@ from flask import Blueprint, current_app, render_template, abort, flash, request
 from models import Post, Comment, Like, Link
 # from database import db_session
 from datetime import datetime
+from werkzeug.contrib.cache import MemcachedCache, SimpleCache
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound
 from flaskext.uploads import UploadNotAllowed
 import sys
+
+#Deve ser configuravel atraves do asciiblog.cfg
+cache = SimpleCache()
+#cache = MemcachedCache(['127.0.0.1:11211'])
 
 blog = Blueprint('blog', __name__, template_folder='templates', static_folder='static')
 uploaded_files = None
@@ -52,6 +57,12 @@ def blog_more():
 	resp.set_cookie('blog_page', page)
 	return resp
 
+@blog.route('/list-posts')
+@blog.route('/list-posts/<int:page>/')
+def list_posts(page=1):
+	posts = Post.query.order_by("date_created desc").paginate(page=page, per_page=30).items
+	return render_template('list-posts.html', posts=posts)
+
 @blog.route('/new-post')
 def new_post():
 	return render_template('new-post.html')
@@ -67,7 +78,10 @@ def edit_post(post_id):
 @blog.route('/article/<slug>/')
 def view_post(slug):
 	try:
-		post = Post.query.filter(Post.slug==slug).one()
+		post = cache.get('view-post-%s' % slug)
+		if not post:
+			post = Post.query.filter(Post.slug==slug).one()
+			cache.set('view-post-%s' % slug, post)
 		return render_template('one-post.html',post=post)
 	except NoResultFound as nrf:
 		return abort(404)

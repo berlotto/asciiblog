@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="http://malsup.github.com/jquery.form.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'mensagens.html' %}
+
+	<section class="span9 listagem">
+
+		<h2>Listagem dos Posts</h2>
+
+	    <form class="well form-search">
+		    <input type="text" class="input-large search-query" name="filter">
+		    <button type="submit" class="btn">Search</button>
+		</form>
+		<table id="listagem-post" class="table table-striped table-bordered table-condensed">
+			<tr>
+				<th>#</th>
+				<th>Id</th>
+				<th>Titulo</th>
+				<th>Criado em</th>
+			</tr>
+
+		{% for post in posts %}
+			<tr>
+				<td>
+					<input type="checkbox">
+					<a href=""><i class="icon-remove"></i></a>
+					<a href="{{url_for('blog.edit_post', post_id=post.id)}}"><i class="icon-edit"></i></a>
+					<a href="{{url_for('blog.view_post', slug=post.slug)}}"><i class="icon-eye-open"></i></a>
+				</td>
+				<td>{{post.id}}</td>
+				<td>{{post.title}}</td>
+				<td>{{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</td>
+			</tr>
+		{% endfor %}
+		</table>
+
+		<ul class="pager">
+			<li class="previous">
+				<a href="" title="Pagina anterior"><i class="icon-backward"></i></a>
+			</li>
+			<li>1,</li>
+			<li>2,</li>
+			<li>3,</li>
+			<li>4,</li>
+			<li class="next">
+				<a href="" title="Próxima página"><i class="icon-forward"></i></a>
+			</li>
+		</ul>
+
+	</section>
+
+{% endblock %}
+
+{% block bottompage %}
+<script type="text/javascript">
+    // wait for the DOM to be loaded
+    $(document).ready(function() {
+        // bind 'form-comentario' and provide a simple callback function
+        $('#form-comentario').ajaxForm(function() {
+            alert("Thank you for your comment!");
+        });
+    });
+</script>
+{% endblock %}
