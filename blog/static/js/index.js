@@ -30,6 +30,7 @@ $(function(){ // wait for document to load
   };
 
   $('#nomoreresults').fadeOut();
+  $('#loading').hide();
 
 
   //CONTROL FOR ICON TO SCROLL TO TOP ( tks for http://webdesignerwall.com/tutorials/animated-scroll-to-top )
@@ -40,6 +41,7 @@ $(function(){ // wait for document to load
   // fade in #back-top
   $(function () {
     $(window).scroll(function () {
+      $('#readmore').fadeOut()
       if ($(this).scrollTop() > 100) {
         $('#toplink').fadeIn();
       } else {

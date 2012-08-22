@@ -101,10 +101,12 @@ def save_post():
 			featured = request.form['featured']
 		resume = request.form['resume']
 		slug = request.form['slug']
+		tags = request.form['tags']
 
 		add = False;
 		if 'id' in request.form:
 			post = Post.query.get(request.form['id'])
+			cache.delete('view-post-%s' % slug) #Remove this post from cache for update in next view
 		else:
 			add =  True
 			post = Post()
@@ -117,10 +119,7 @@ def save_post():
 		post.slug = slug
 		post.date_updated = datetime.today()
 		post.picture = ''
-
-		if add:
-			db.session.add(post)
-
+		post.tags = tags
 
 		try:
 			global uploaded_files
@@ -128,11 +127,12 @@ def save_post():
 			if photo:
 				filename = uploaded_files.save(photo)
 				post.picture = filename
-				db.session.add(post)
-			
+
 		except UploadNotAllowed:
 			flash("The upload was not allowed")
 
+		if add:
+			db.session.add(post)
 		db.session.commit()
 		# flash('Post salvo com sucesso')
 		# return redirect(url_for('blog.view_post',  slug=slug))

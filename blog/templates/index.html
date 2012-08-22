@@ -12,19 +12,35 @@
 
 		{%for post in posts%}
 			<article>
-			<header>
-		    	<div class="input-prepend pull-right">
+			<header class="row">
+				<div class="span7 post-title"><a href="/blog/article/{{post.slug}}">{{post.title|title}}</a>
+					<br><span class="post-date">Em: {{post.date_created.strftime('%d/%B/%Y')}}</span>
+				</div>
+		    	<div class="input-prepend span2">
 				    <span class="add-on"><i class="icon-comment"></i>10</span>
 				    <span class="add-on"><i class="icon-thumbs-up"></i>12</span>
 				    <span class="add-on"><i class="icon-thumbs-down"></i>2</span>
 			    </div>
-				<h1><a href="/blog/article/{{post.slug}}">{{post.title}}</a></h1>
-				<h4>Data: {{post.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
 			</header>
-			<a href="#" class="thumbnail span2 postbanner">
-				<img src="http://placehold.it/200x150" alt="">
-			</a>
-			<p class="span6 pull-right">{{post.resume}}</p>
+			<div class="row">
+				{%if post.picture %}
+				<div class="span3">
+					<a href="#" class="thumbnail postbanner">
+						<img src="http://placehold.it/220x100" alt="">
+					</a>
+				</div>
+				<div class="span6">
+				{%else%}
+				<div class="span9">
+				{%endif%}
+
+				{%if post.resume%}
+					<p>{{post.resume}}</p>
+				{%else%}
+					{{post.content|safe|truncate(length=800)}}
+				{%endif%}
+				</div>
+			</div>
 			</article>
 		<hr>
 		{%endfor%}
@@ -35,6 +51,7 @@
 
 	<section id="pagination" class="span9">
 		<div id="loading" class="offset3"><img src="/static/img/loading.gif"></div>
+		<div id="readmore" class="offset3">Role a página para ler mais posts !!</div>
 	</section>
 
 	<div id="toplink">

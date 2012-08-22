@@ -11,12 +11,11 @@
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
 	<!-- jquery library + complete jquery tools -->
-	<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+	<script src="{{url_for('static', filename="js/jquery.tools.min.js")}}"></script>
 
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}"/>
 	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap-responsive.min.css') }}"/>
-	<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -42,41 +41,43 @@
 				<a href="/"><img src="{{url_for('static', filename='img/logotipo-b.png')}}"></a>
 			</header>
 
-			<div  id="menu" class="span7 offset2">
-				<ul class="nav nav-pills pull-right">
-					<li class="active"><a href="/"><i class="icon-home"></i>&nbsp;Home</a></li>
-					<li><a href="/blog">Blog</a></li>
-					<li><a href="#">Livro</a></li>
-					<li><a href="#">Encurtador</a></li>
-					<li><a href="#">Fotos</a></li>
-					<li><a href="#">Contato</a></li>
-					<li><a href="#">Projetos</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i>&nbsp;Administração <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li class="nav-header">Blog</li>
-							<li><a href="{{url_for('blog.list_posts')}}">Posts</a></li>
-							<li><a href="{{url_for('blog.new_post')}}">New post</a></li>
-							<li><a href="#">Midia</a></li>
-							<li><a href="#">Comentários</a></li>
-							<li class="nav-header">Encurtador</li>
-							<li><a href="#">Links</a></li>
-							<li><a href="#">Encurtar</a></li>
-							<li class="nav-header">Páginas</li>
-							<li><a href="#">Páginas</a></li>
-							<li><a href="#">Nova Pagina</a></li>
-							<li class="nav-header">Usuário</li>
-							<li><a href="#">Usuários</a></li>
-							<li><a href="#">Logout</a></li>
-							<li class="divider"></li>
-							<li><a href="/configuration">Configuration</a></li>
-						</ul>
-					</li>
-				</ul>
+			<div class="navbar span8 offset1">
+				<div  id="menu" class="navbar-inner">
+					<!-- <ul class="nav nav-pills pull-right"> -->
+					<ul class="nav nav-pills pull-right">
+						<li class="active"><a href="/"><i class="icon-home"></i>&nbsp;Home</a></li>
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="#">Livro</a></li>
+						<li><a href="#">Encurtador</a></li>
+						<li><a href="#">Fotos</a></li>
+						<li><a href="#">Contato</a></li>
+						<li><a href="#">Projetos</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i>&nbsp;Administração <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="nav-header">Blog</li>
+								<li><a href="{{url_for('blog.list_posts')}}">Posts</a></li>
+								<li><a href="{{url_for('blog.new_post')}}">New post</a></li>
+								<li><a href="{{url_for('media.index')}}">Media</a></li>
+								<li><a href="#">Comentários</a></li>
+								<li class="nav-header">Encurtador</li>
+								<li><a id='link-links' href="#">Links</a></li>
+								<li><a href="#">Encurtar</a></li>
+								<li class="nav-header">Páginas</li>
+								<li><a href="{{url_for('pages.index')}}">Páginas</a></li>
+								<li><a href="#">Nova Pagina</a></li>
+								<li class="nav-header">Usuário</li>
+								<li><a href="#">Usuários</a></li>
+								<li><a href="#">Logout</a></li>
+								<li class="divider"></li>
+								<li><a href="/configuration">Configuration</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 			</div>
-
 		</div>
-		
+
 		<div class="row">
 
 
@@ -85,15 +86,52 @@
 
 		</div>
 		<hr/>
-		<footer>
+		<footer class="row">
+			<div class="span3">
 			Este site é criado por Sérgio Berlotto, utiliza <a href="http://berlotto.net/asciiblog">asciiblog</a> engine.<br/>
 			HTML5 e CSS3. W3C Ready!
+			</div>
+			<div class="span3">
+				<h4>Informação 1</h4>
+			</div>
+			<div class="span3">
+				<h4>Mapa do site</h4>
+				<ul>
+					<li>Home</li>
+					<li>Blog</li>
+					<li>Paginas</li>
+					<li>Encurtador</li>
+				</ul>
+			</div>
+			<div class="span3">
+				<h4>Uma imagem legal</h4>
+			</div>
 		</footer>
 
 	</div>
 
+
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap-modal.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap-tooltip.js') }}"></script>
+
 {% block bottompage %}
 {% endblock %}
+
+<script type="text/javascript">
+
+$(function(){
+	options = {
+		// title:'Novo site e tal!',
+		content:'Opa ! Seja bem vindo <strong>meu</strong> amigo!!!!',
+		placement: 'left',
+		trigger: 'hover'
+	};
+	$('#link-links').popover(options)
+});
+
+</script>
+
 
 </body>
 </html>

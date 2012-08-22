@@ -26,7 +26,7 @@ edit = function(url){
 				    <button class="btn"><i class="icon-download-alt"></i>Source</button>
 			    </div>
 				<h1>{{post.title}}</h1>
-				<h4>Data: {{post.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h4>
+				<h4>Data: {{post.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
 				<h4>Url Curta: <a href="http://berlotto.net/u/123">http://berlotto.net/u/123</a></h4>
 
 			</header>
@@ -35,7 +35,7 @@ edit = function(url){
 				<img src="http://placehold.it/200x150" alt="">
 			</a>
 			{%endif%}
-			<div class="content">{{post.content|translate_markdown}}</div>
+			<div class="content">{{post.content|translate_markdown|safe}}</div>
 			</article>
 			<br><br>
 

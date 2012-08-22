@@ -71,18 +71,18 @@
 			    <form id="form-search" class="well form-inline">
 			    	<div class="input-prepend">
 			    	<span class="add-on"><i class="icon-search"></i></span>
-				    <input type="text" class="input-large search-query">
+				    <input type="text" placeholder="pesquisar...">
 					</div>
 				    <button type="submit" class="btn">Buscar</button>
 			    </form>
 				<h3>Assine</h3>
 				<p>Informe seu e-mail para receber informações peródicas sobre novos conteúdos no site</P>
-			    <form class="well form-inline">
+			    <form id="form-assinar" class="well form-inline">
 			    	<div class="input-prepend">
 			    	<span class="add-on">@</span>
-				    <input type="text" class="input-large search-query">
+				    <input type="text" placeholder="seu e-mail...">
 				    </div>
-				    <button type="submit" class="btn">Assinar</button>
+				    <button type="submit" class="btn">Ok</button>
 			    </form>
 			</div>
 		</div>
@@ -105,12 +105,11 @@
 				</ul>
 			</div>
 			<div class="span4">
-				<h3>Últimos twitts</h3>
+				<h3><a href="http://twitter.com/#!/berlottocdd" target="_blank">Últimos twitts</a></h3>
 				{%for twitt in twitts%}
-				<p><i class="icon-asterisk"></i><a href="http://twitter.com/berlottocdd/status/{{twitt.id}}">{{twitt.text}}</a></p>
+				<p><a href="http://twitter.com/berlottocdd/status/{{twitt.id}}"><i class="icon-share"></i></a>&nbsp;{{twitt.text|urlize}}</p>
 				{%endfor%}
-				<a href="https://twitter.com/berlottocdd" class="twitter-follow-button" data-show-count="false" data-lang="pt" data-size="large">Seguir @berlottocdd</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<a href="https://twitter.com/berlottocdd">Seguir @berlottocdd</a>
 
 			</div>
 		</div>

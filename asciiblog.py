@@ -29,6 +29,8 @@ TWITTER_JSON_TIMELINE_URL = \
 #========================================= Blueprint Applications
 from blog import blog
 from blog.models import Post, Comment
+from media import media
+from pages import pages
 
 #========================================= UPLOADS
 from flaskext.uploads import UploadSet, configure_uploads, IMAGES, UploadNotAllowed
@@ -39,6 +41,9 @@ configure_uploads(app, uploaded_files)
 #========================================= BLUEPRINTS APPS
 app.register_blueprint(blog, url_prefix='/blog')
 blog.register_uploader(uploaded_files)
+app.register_blueprint(media, url_prefix='/media')
+app.register_blueprint(pages, url_prefix='/pages')
+
 
 #========================================= CUSTOM FILTERS FOR JINJA
 from jinja2 import evalcontextfilter, Markup, escape

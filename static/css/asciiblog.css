@@ -6,6 +6,7 @@
 
 body{
 	padding: 10px;
+	background-image: url('../img/back.png');
 }
 header {
 	/*height: 100px;*/
@@ -82,21 +83,18 @@ label .error{
 }
 
 .post-date {
-	background: #000 url('../img/fulldate-red.jpg') no-repeat scroll top left;
-	width:60px;
-	height:58px;
-	color:#FFFFFF;
-	padding-top: 1px;
-	text-align:center;
-	text-transform:uppercase;
-}
-.post-date .month {
-	font-size:9px;
-	font-weight:bold;
-}
-.post-date .day {
-	color:#333;
-	font-size:30px;
 	font-weight: bold;
-	margin-top: 8px;
+	font-style: italic;
+	font-size: x-small;
+}
+.post-title {
+	font-weight: bolder;
+	font-size: large;
+}
+
+footer{
+	/*http://webdesignerwall.com/tutorials/cross-browser-css-gradient*/
+	background: -moz-linear-gradient(top, #F2F2F2 , #fff) repeat scroll 0 0 transparent;
+	padding-top: 10px;
+	height: 200px;
 }

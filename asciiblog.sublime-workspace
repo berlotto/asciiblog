@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"x",
+				"x-small  (value)"
+			],
+			[
+				"la",
+				"x-large  (value)"
+			],
+			[
+				"small",
+				"smaller  (value)"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"bac",
+				"background-image"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
 				"alig",
 				"vertical-align"
 			],
@@ -40,10 +72,6 @@
 				"include_once"
 			],
 			[
-				"text",
-				"text-transform"
-			],
-			[
 				"side",
 				"sidebar_items"
 			],
@@ -67,15 +95,7 @@
 			"file": "asciiblog.py",
 			"settings":
 			{
-				"buffer_size": 3538,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "asciiblog.cfg",
-			"settings":
-			{
-				"buffer_size": 441,
+				"buffer_size": 3689,
 				"line_ending": "Unix"
 			}
 		},
@@ -83,15 +103,7 @@
 			"file": "blog/__init__.py",
 			"settings":
 			{
-				"buffer_size": 4277,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/css/asciiblog.css",
-			"settings":
-			{
-				"buffer_size": 964,
+				"buffer_size": 4388,
 				"line_ending": "Unix"
 			}
 		},
@@ -99,15 +111,7 @@
 			"file": "templates/home.html",
 			"settings":
 			{
-				"buffer_size": 4348,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "blog/templates/one-post.html",
-			"settings":
-			{
-				"buffer_size": 3828,
+				"buffer_size": 4085,
 				"line_ending": "Unix"
 			}
 		},
@@ -136,6 +140,14 @@
 			}
 		},
 		{
+			"file": "pages/model.py",
+			"settings":
+			{
+				"buffer_size": 558,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "blog/templates/list-posts.html",
 			"settings":
 			{
@@ -147,23 +159,7 @@
 			"file": "templates/base.html",
 			"settings":
 			{
-				"buffer_size": 3303,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "blog/static/css/one-post.css",
-			"settings":
-			{
-				"buffer_size": 497,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "blog/templates/index.html",
-			"settings":
-			{
-				"buffer_size": 1299,
+				"buffer_size": 3997,
 				"line_ending": "Unix"
 			}
 		},
@@ -171,7 +167,39 @@
 			"file": "blog/templates/more.html",
 			"settings":
 			{
-				"buffer_size": 798,
+				"buffer_size": 1083,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "media/__init__.py",
+			"settings":
+			{
+				"buffer_size": 834,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pages/__init__.py",
+			"settings":
+			{
+				"buffer_size": 938,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "media/templates/media_index.html",
+			"settings":
+			{
+				"buffer_size": 4402,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/index.html",
+			"settings":
+			{
+				"buffer_size": 1693,
 				"line_ending": "Unix"
 			}
 		}
@@ -288,13 +316,19 @@
 	},
 	"file_history":
 	[
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/static/js/index.js",
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/one-post.html",
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/static/css/one-post.css",
+		"/home/berlotto/Desenvolvimento/asciiblog/static/css/asciiblog.css",
+		"/home/berlotto/Desenvolvimento/asciiblog/asciiblog.cfg",
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/index.html",
+		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/sidebar.html",
+		"/home/berlotto/Desenvolvimento/asciiblog/media/__init__.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/teste-instagram.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/models.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/database.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/asciiblog.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/templates/base.html",
-		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/index.html",
-		"/home/berlotto/Desenvolvimento/asciiblog/blog/static/js/index.js",
 		"/home/berlotto/Desenvolvimento/asciiblog/README.md",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/new-post.html",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/__init__.py",
@@ -302,10 +336,6 @@
 		"/home/berlotto/Desenvolvimento/asciiblog/templates/home.html",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/static/js/new-post.js",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/more.html",
-		"/home/berlotto/Desenvolvimento/asciiblog/asciiblog.cfg",
-		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/sidebar.html",
-		"/home/berlotto/Desenvolvimento/asciiblog/static/css/asciiblog.css",
-		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/one-post.html",
 		"/home/berlotto/Desenvolvimento/asciiblog/static/js/scrollpagination.js",
 		"/home/berlotto/Desenvolvimento/asciiblog/slugfy.py",
 		"/home/berlotto/Desenvolvimento/asciiblog/blog/templates/mensagens.html",
@@ -398,6 +428,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"flickrapi",
+			"150x150",
+			"250x150",
+			"></",
 			"<p>",
 			"</p>",
 			"<p>",
@@ -500,7 +534,7 @@
 	"groups":
 	[
 		{
-			"selected": 12,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -508,15 +542,15 @@
 					"file": "asciiblog.py",
 					"settings":
 					{
-						"buffer_size": 3538,
+						"buffer_size": 3689,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								390,
+								390
 							]
 						],
 						"settings":
@@ -525,51 +559,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "asciiblog.cfg",
-					"settings":
-					{
-						"buffer_size": 441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "blog/__init__.py",
 					"settings":
 					{
-						"buffer_size": 4277,
+						"buffer_size": 4388,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3639,
-								3639
+								698,
+								698
 							]
 						],
 						"settings":
@@ -578,94 +586,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1305.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/home.html",
+					"settings":
+					{
+						"buffer_size": 4085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2305,
+								2305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 765.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "static/css/asciiblog.css",
-					"settings":
-					{
-						"buffer_size": 964,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 426.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "templates/home.html",
-					"settings":
-					{
-						"buffer_size": 4348,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2422,
-								2422
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "blog/templates/one-post.html",
-					"settings":
-					{
-						"buffer_size": 3828,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1038,
-								1038
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "blog/templates/new-post.html",
 					"settings":
 					{
@@ -676,8 +630,8 @@
 						"selection":
 						[
 							[
-								3584,
-								3584
+								2339,
+								2339
 							]
 						],
 						"settings":
@@ -692,7 +646,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 4,
 					"file": "blog/static/js/new-post.js",
 					"settings":
 					{
@@ -720,7 +674,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 5,
 					"file": "blog/models.py",
 					"settings":
 					{
@@ -731,8 +685,8 @@
 						"selection":
 						[
 							[
-								694,
-								694
+								0,
+								0
 							]
 						],
 						"settings":
@@ -747,7 +701,34 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 6,
+					"file": "pages/model.py",
+					"settings":
+					{
+						"buffer_size": 558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								394,
+								394
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "blog/templates/list-posts.html",
 					"settings":
 					{
@@ -774,19 +755,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 8,
 					"file": "templates/base.html",
 					"settings":
 					{
-						"buffer_size": 3303,
+						"buffer_size": 3997,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2123,
-								2123
+								3073,
+								3073
 							]
 						],
 						"settings":
@@ -795,31 +776,83 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 105.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "blog/static/css/one-post.css",
+					"buffer": 9,
+					"file": "blog/templates/more.html",
 					"settings":
 					{
-						"buffer_size": 497,
+						"buffer_size": 1083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								380,
-								380
+								55,
+								55
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "media/__init__.py",
+					"settings":
+					{
+						"buffer_size": 834,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								834,
+								834
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "pages/__init__.py",
+					"settings":
+					{
+						"buffer_size": 938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								704,
+								704
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -829,45 +862,46 @@
 				},
 				{
 					"buffer": 12,
-					"file": "blog/templates/index.html",
+					"file": "media/templates/media_index.html",
 					"settings":
 					{
-						"buffer_size": 1299,
+						"buffer_size": 4402,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								667,
-								667
+								2036,
+								2036
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 13,
-					"file": "blog/templates/more.html",
+					"file": "blog/templates/index.html",
 					"settings":
 					{
-						"buffer_size": 798,
+						"buffer_size": 1693,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								412,
-								412
+								1392,
+								1392
 							]
 						],
 						"settings":
@@ -876,7 +910,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -926,6 +960,22 @@
 		"selected_items":
 		[
 			[
+				"base",
+				"templates/base.html"
+			],
+			[
+				"one-post.css",
+				"blog/static/css/one-post.css"
+			],
+			[
+				"index.js",
+				"blog/static/js/index.js"
+			],
+			[
+				"ascii",
+				"static/css/asciiblog.css"
+			],
+			[
 				"more",
 				"blog/templates/more.html"
 			],
@@ -934,20 +984,28 @@
 				"blog/templates/index.html"
 			],
 			[
-				"one",
-				"blog/static/css/one-post.css"
+				"home",
+				"templates/home.html"
 			],
 			[
-				"base",
-				"templates/base.html"
+				"index",
+				"blog/templates/index.html"
 			],
 			[
-				"posts",
-				"blog/templates/list-posts.html"
+				"side",
+				"blog/templates/sidebar.html"
 			],
 			[
 				"model",
 				"blog/models.py"
+			],
+			[
+				"one",
+				"blog/static/css/one-post.css"
+			],
+			[
+				"posts",
+				"blog/templates/list-posts.html"
 			],
 			[
 				"new-post",
@@ -958,24 +1016,12 @@
 				"blog/templates/new-post.html"
 			],
 			[
-				"home",
-				"templates/home.html"
-			],
-			[
 				"ascc",
 				"asciiblog.cfg"
 			],
 			[
 				"hom",
 				"templates/home.html"
-			],
-			[
-				"ascii",
-				"static/css/asciiblog.css"
-			],
-			[
-				"side",
-				"blog/templates/sidebar.html"
 			],
 			[
 				"scro",
