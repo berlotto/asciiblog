@@ -70,3 +70,33 @@ label .error{
     font-weight: bold;
     padding: 3px;
 }
+
+/*for blog list*/
+
+.artigos header{
+	margin-bottom: 10px;
+}
+
+.artigos header h2{
+	font-style: italic;
+}
+
+.post-date {
+	background: #000 url('../img/fulldate-red.jpg') no-repeat scroll top left;
+	width:60px;
+	height:58px;
+	color:#FFFFFF;
+	padding-top: 1px;
+	text-align:center;
+	text-transform:uppercase;
+}
+.post-date .month {
+	font-size:9px;
+	font-weight:bold;
+}
+.post-date .day {
+	color:#333;
+	font-size:30px;
+	font-weight: bold;
+	margin-top: 8px;
+}
