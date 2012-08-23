@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug.contrib.cache import MemcachedCache, SimpleCache
 # from database import db_session
@@ -65,7 +65,6 @@ def get_twitts():
 	message = loads(json)
 	return message
 
-
 #========================================= MAIN ROUTES
 @app.route('/')
 def index():
@@ -107,6 +106,15 @@ def slugfy():
 	from slugfy import slug
 	text = request.args['text']
 	return jsonify(slug=slug(text))
+
+#========================================= ROUTE FOR PAGES
+@app.route('/<slug>/')
+def page_(slug):
+	'''
+	Esta rota abre diretamente uma pagina, e está definida por ultimo para abrir somente
+	slugs de paginas que não coinsidam com os nomes dos aplicativos definidos, como blog,media,etc..
+	'''
+	return redirect( url_for('pages.view', slug=slug))
 
 
 #========================================= MAIN APP

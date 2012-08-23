@@ -47,7 +47,7 @@
 					<ul class="nav nav-pills pull-right">
 						<li class="active"><a href="/"><i class="icon-home"></i>&nbsp;Home</a></li>
 						<li><a href="/blog">Blog</a></li>
-						<li><a href="#">Livro</a></li>
+						<li><a href="/livro">Livro</a></li>
 						<li><a href="#">Encurtador</a></li>
 						<li><a href="#">Fotos</a></li>
 						<li><a href="#">Contato</a></li>
@@ -65,7 +65,7 @@
 								<li><a href="#">Encurtar</a></li>
 								<li class="nav-header">Páginas</li>
 								<li><a href="{{url_for('pages.index')}}">Páginas</a></li>
-								<li><a href="#">Nova Pagina</a></li>
+								<li><a href="{{url_for('pages.new')}}">Nova Pagina</a></li>
 								<li class="nav-header">Usuário</li>
 								<li><a href="#">Usuários</a></li>
 								<li><a href="#">Logout</a></li>
@@ -122,12 +122,29 @@
 
 $(function(){
 	options = {
-		// title:'Novo site e tal!',
-		content:'Opa ! Seja bem vindo <strong>meu</strong> amigo!!!!',
-		placement: 'left',
+		title:'Obtenha o conteúdo Markdown deste artigo.',
+		placement: 'bottom',
 		trigger: 'hover'
 	};
-	$('#link-links').popover(options)
+	$('.source').tooltip(options)	
+	options = {
+		title:'Clique se GOSTOU deste artigo.',
+		placement: 'bottom',
+		trigger: 'hover'
+	};
+	$('.curtir').tooltip(options)	
+	options = {
+		title:'Clique se NÃO GOSTOU deste artigo.',
+		placement: 'bottom',
+		trigger: 'hover'
+	};
+	$('.descurtir').tooltip(options)	
+	options = {
+		title:'Veja os comentários',
+		placement: 'bottom',
+		trigger: 'hover'
+	};
+	$('.comentarios').tooltip(options)	
 });
 
 </script>

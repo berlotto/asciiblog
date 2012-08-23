@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<link rel="stylesheet" href="{{ url_for('blog.static', filename='css/one-post.css') }}"/>
+<script type="text/javascript">
+edit = function(url){
+	window.location = url;
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'mensagens.html' %}
+
+	<section class="span9 artigo">
+
+			<article>
+			<header>
+		    	<div class="btn-group pull-right">
+				    <button class="btn curtir"><i class="icon-thumbs-up"></i>12</button>
+				    <button class="btn descurtir"><i class="icon-thumbs-down"></i>2</button>
+				    <button class="btn" onclick="edit('{{url_for('pages.edit', slug=page.slug)}}');"><i class="icon-edit"></i></button>
+				    <button class="btn source"><i class="icon-download-alt"></i></button>
+			    </div>
+				<h1>{{page.title}}</h1>
+				<h4>Data: {{page.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
+				<h4>Url Curta: <a href="http://berlotto.net/u/123">http://berlotto.net/u/123</a></h4>
+
+			</header>
+			<div class="content">{{page.content|translate_markdown|safe}}</div>
+			</article>
+
+	</section>
+
+{% include 'sidebar.html' %}
+
+{% endblock %}
+
+{% block bottompage %}
+<script type="text/javascript">
+    // wait for the DOM to be loaded
+    $(document).ready(function() {
+        // bind 'form-comentario' and provide a simple callback function
+        $('#form-comentario').ajaxForm(function() {
+            alert("Thank you for your comment!");
+        });
+    });
+</script>
+{% endblock %}

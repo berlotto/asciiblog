@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<!-- EpicEditor -->
+<!-- <script type="text/javascript" src="{{url_for('blog.static', filename="epiceditor/js/epiceditor.min.js")}}"></script> -->
+
+<!-- Jquery AJaxForm http://jquery.malsup.com/form -->
+<script type="text/javascript" src="{{url_for('static', filename="js/jquery.form.js")}}"></script>
+<!-- http://www.malsup.com/jquery/block/ -->
+<script type="text/javascript" src="{{url_for('static', filename="js/jquery.blockUI.js")}}"></script>
+
+<!-- Editor Markdown -->
+<!-- http://dillinger.io/ -->
+<!-- http://ace.ajax.org -->
+<script type="text/javascript" src="{{url_for('static', filename="ace-editor/src-min-noconflict/ace.js")}}"></script>
+
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+
+<!-- http://softwaremaniacs.org/soft/highlight/en/ -->
+
+<style type="text/css">
+#editor{
+	height: 300px;
+	margin: 0;
+    position: relative;
+    padding: 0px !important;
+}
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+	<div id="retorno"></div>
+{% include 'mensagens.html' %}
+
+	<form id="form-new-page" class="well form-horizontal" enctype="multipart/form-data" action="{{url_for('pages.save')}}" method="POST">
+	{% if page %}
+		<h1 id="acao">Editar página</h1>
+		<label id="id">Post id:{{page.id}}</label>
+		<input type="hidden" name="id" value="{{page.id}}">
+		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150" value="{{page.title}}"><br>&nbsp;
+
+		<pre id="editor">{{page.content}}</pre>
+		<input type="hidden" id="content" name="content" value="{{page.content}}">
+		<label for="slug">Slug</label><input class="span7 required" id="slug" name="slug" type="text" length="150" value="{{page.slug}}">
+	{% else %}
+		<h1 id="acao">Nova página</h1>
+		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150"><br>&nbsp;
+		<pre id="editor"></pre>
+		<input type="hidden" id="content" name="content" value="">
+		<label for="slug">Slug</label><input class="span7 required" id="slug" name="slug" type="text" length="150">
+	{% endif %}
+		<br>
+		<input type="submit" id="btn-enviar" class="btn btn-large btn-primary pull-right" value="Salvar">
+	</form>
+
+{% endblock %}
+
+
+{%block bottompage%}
+<script type="text/javascript" src="{{url_for('pages.static', filename="js/new-page.js")}}"></script>
+{%endblock%}
