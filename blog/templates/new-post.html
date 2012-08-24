@@ -37,6 +37,7 @@
 {% include 'mensagens.html' %}
 
 <!-- http://www.tidbits.com.br/como-fazer-accordion-simples-com-jquery-em-5-linhas-de-codigo -->
+	<a id="btn-ajuda" class="btn btn-info pull-right">Ajuda</a>
 	<form id="form-new-post" class="well form-horizontal" enctype="multipart/form-data" action="{{url_for('blog.save_post')}}" method="POST">
 	{% if post %}
 		<h1 id="acao">Editar post</h1>
@@ -56,9 +57,11 @@
 		<h1 id="acao">Novo post</h1>
 		<label for="title">Título</label><input class="span7 required" id="title" name="title" type="text" length="150"><br>&nbsp;
 		<label class="checkbox" for="featured"><input type="checkbox" value="featured" id="featured" name="featured">Post destacado</label>
+		<label>Conteúdo:</label>
 		<pre id="editor"></pre>
 		<input type="hidden" id="content" name="content" value="">
 		<label for="resume">Resumo</label><textarea class="span12 required" id="resume" name="resume"></textarea>
+		<div id="help"></div>
 		<label for="slug">Slug</label><input class="span7 required" id="slug" name="slug" type="text" length="150">
 		<label for="tags">Tags</label><input class="span8" id="tags" name="tags" type="text" lenght="500" value="">
 		<label for="postfile">Banner (use este campo para enviar o banner)</label><input type="file" id="postfile" name="postfile">
@@ -73,4 +76,13 @@
 
 {%block bottompage%}
 <script type="text/javascript" src="{{url_for('blog.static', filename="js/new-post.js")}}"></script>
+<script type="text/javascript">
+$(function(){
+	$('#btn-ajuda').click(function(){
+		
+	});
+		
+});
+$('#myModal').hide();
+</script>
 {%endblock%}

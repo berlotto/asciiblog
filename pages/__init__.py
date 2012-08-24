@@ -8,6 +8,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound
 from flaskext.uploads import UploadNotAllowed
 import sys
+import util
 
 #Deve ser configuravel atraves do asciiblog.cfg
 cache = SimpleCache()
@@ -24,7 +25,8 @@ def view(slug):
 		if not pagina:
 			return abort(404)
 		else:
-			return render_template('pages_view.html', page=pagina)
+			sidebar=util.last_contents()
+			return render_template('pages_view.html', page=pagina, sidebar=sidebar)
 	except NoResultFound:
 		return abort(404)
 
