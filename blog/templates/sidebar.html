@@ -1,22 +1,25 @@
-   <aside class="span3">
+<aside class="span3">
 
-    <section class="widget">
-     <h3>Ultimos Posts</h3>
-     <ul>
-      <li>Post 1</li>
-      <li>Post 1</li>
-      <li>Post 1</li>
-      <li>Post 1</li>
-    </ul>
-  </section>
-  <section class="widget">
-   <h3>Ultimos Comentarios</h3>
-   <ul>
-    <li>Post 1</li>
-    <li>Post 1</li>
-    <li>Post 1</li>
-    <li>Post 1</li>
-  </ul>
+<section class="widget">
+  <div class="fb-like-box" data-href="https://www.facebook.com/pages/berlottonet/175474392550680?ref=hl" data-width="292" data-height="350" data-show-faces="false" data-border-color="#fff" data-stream="true" data-header="false"></div>
+</section>
+<section class="widget">
+ <h3>Outros Posts</h3>
+
+ <ul>
+  {%for post in sidebar[4]%}
+  <li><a href="{{url_for('blog.view_post',slug=post.slug)}}">{{post.title}}</a></li>
+  {%endfor%}
+</ul>
+</section>
+<section class="widget">
+ <h3>Ultimos Comentarios</h3>
+ <ul>
+  <li>Post 1</li>
+  <li>Post 1</li>
+  <li>Post 1</li>
+  <li>Post 1</li>
+</ul>
 </section>
 <section class="widget">
  <h3>Twitter</h3>

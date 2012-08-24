@@ -34,6 +34,15 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=308903505828121";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 	<div class="container">
 		<div class="row page-header">
 
@@ -50,8 +59,8 @@
 						<li><a href="/livro">Livro</a></li>
 						<li><a href="#">Encurtador</a></li>
 						<li><a href="#">Fotos</a></li>
-						<li><a href="#">Contato</a></li>
-						<li><a href="#">Projetos</a></li>
+						<li><a href="/contatos">Contato</a></li>
+						<li><a href="/projetos">Projetos</a></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i>&nbsp;Administração <b class="caret"></b></a>
 							<ul class="dropdown-menu">
@@ -104,7 +113,7 @@
 				</ul>
 			</div>
 			<div class="span3">
-				<h4>Uma imagem legal</h4>
+				<div class="fb-facepile" data-href="https://www.facebook.com/pages/berlottonet/175474392550680" data-max-rows="1" data-width="300"></div>
 			</div>
 		</footer>
 

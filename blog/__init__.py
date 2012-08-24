@@ -9,6 +9,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound
 from flaskext.uploads import UploadNotAllowed
 import sys
+import util
 
 #Deve ser configuravel atraves do asciiblog.cfg
 cache = SimpleCache()
@@ -27,9 +28,9 @@ blog.register_uploader = register_uploader
 
 @blog.route('/')
 def blog_index():
-	print 'POSTS_PER_PAGE', current_app.config['POSTS_PER_PAGE']
+	# print 'POSTS_PER_PAGE', current_app.config['POSTS_PER_PAGE']
 	posts = Post.query.order_by("date_created desc").limit(current_app.config['POSTS_PER_PAGE'])
-	resp = make_response( render_template('index.html',posts=posts) )
+	resp = make_response( render_template('index.html',posts=posts, sidebar=util.last_contents()) )
 	resp.set_cookie('blog_page', 1)
 	return resp
 
@@ -93,7 +94,7 @@ def save_comment():
 @blog.route('/save-post',methods = ['POST',])
 def save_post():
 	try:
-		print "RECEBIDO", request.form
+		# print "RECEBIDO", request.form
 		title = request.form['title']
 		content = request.form['content']
 		featured = 'N'
