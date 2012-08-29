@@ -25,8 +25,11 @@ def view(slug):
 		if not pagina:
 			return abort(404)
 		else:
-			sidebar=util.last_contents()
-			return render_template('pages_view.html', page=pagina, sidebar=sidebar)
+			if 'partial' in request.args:
+				return render_template('pages_view_partial.html', page=pagina)
+			else:
+				sidebar=util.last_contents()
+				return render_template('pages_view.html', page=pagina, sidebar=sidebar)
 	except NoResultFound:
 		return abort(404)
 

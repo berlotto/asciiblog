@@ -83,7 +83,7 @@ def view_post(slug):
 		if not post:
 			post = Post.query.filter(Post.slug==slug).one()
 			cache.set('view-post-%s' % slug, post)
-		return render_template('one-post.html',post=post)
+		return render_template('one-post.html',post=post, sidebar=util.last_contents())
 	except NoResultFound as nrf:
 		return abort(404)
 

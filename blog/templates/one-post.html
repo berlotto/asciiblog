@@ -8,102 +8,111 @@ edit = function(url){
 	window.location = url;
 }
 </script>
+<style type="text/css">
+
+.fechado {
+	border-width:1px;
+	border-style:solid;
+	border-color: #C9C9C9;
+	background:#eee url(/static/img/arrow-down.gif) no-repeat 98% 50%;
+	padding: 3px;
+	border-radius:5px;
+}
+
+.aberto {
+	border-radius:5px;
+	border-width:1px;
+	border-color: #C9C9C9;
+	border-style:solid;
+	background:#eee url(/static/img/arrow-up.gif) no-repeat 98% 50%;
+	padding: 3px;
+}
+.comment{
+	/*display: none;*/
+}
+</style>
 {% endblock %}
 
 {% block content %}
 
 {% include 'mensagens.html' %}
 
-	<section class="span9 artigo">
+<section class="span9 artigo">
 
-			<article>
-			<header>
-		    	<div class="btn-group pull-right">
-				    <button class="btn comentarios"><i class="icon-comment"></i>10</button>
-				    <button class="btn curtir"><i class="icon-thumbs-up"></i>12</button>
-				    <button class="btn descurtir"><i class="icon-thumbs-down"></i>2</button>
-				    <button class="btn" onclick="edit('{{url_for('blog.edit_post', post_id=post.id)}}');"><i class="icon-edit"></i></button>
-				    <button class="btn source"><i class="icon-download-alt"></i></button>
-			    </div>
-				<h1>{{post.title}}</h1>
-				<h4>Data: {{post.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
-				<h4>Url Curta: <a href="http://berlotto.net/u/123">http://berlotto.net/u/123</a></h4>
-
-			</header>
-			{% if post.picture %}
-			<a href="#" class="thumbnail span2 postbanner">
-				<img src="http://placehold.it/200x150" alt="">
-			</a>
-			{%endif%}
-			<div class="content">{{post.content|translate_markdown|safe}}</div>
-			</article>
-			<br><br>
-
-			<div class="comments">
-				<h2>Comentários:</h2>
-				<div class="comment">
-					<div class="comment-header">
-				    	<div class="pull-right">
-						    <i class="icon-thumbs-up"></i>
-						    <i class="icon-thumbs-down"></i>
-					    </div>
-						<span>Autor: Usuário 1</span>
-						<span>Data: 01/01/2012</span>
-					</div>
-					<div class="comment-content">
-						<img src="http://placehold.it/32x32" alt="">
-						<p>{{lipsum(n=1, html=True, min=5, max=30)}}</p>
-					</div>
-				</div>
-				<div class="comment">
-					<div class="comment-header">
-				    	<div class="pull-right">
-						    <i class="icon-thumbs-up"></i>
-						    <i class="icon-thumbs-down"></i>
-					    </div>
-						<span>Autor: Usuário 2</span>
-						<span>Data: 01/01/2012</span>
-					</div>
-					<div class="comment-content">
-						<img src="http://placehold.it/32x32" alt="">
-						<p>{{lipsum(n=1, html=True, min=5, max=30)}}</p>
-					</div>
-
-						<div class="comment">
-							<div class="comment-header">
-						    	<div class="pull-right">
-								    <i class="icon-thumbs-up"></i>
-								    <i class="icon-thumbs-down"></i>
-							    </div>
-								<span>Autor: Usuário 3</span>
-								<span>Data: 01/01/2012</span>
-							</div>
-							<div class="comment-content">
-								<img src="http://placehold.it/32x32" alt="">
-								<p>{{lipsum(n=1, html=True, min=5, max=50)}}</p>
-							</div>
-						</div>
-
-
-				</div>
+	<article>
+		<header>
+			<div class="btn-group pull-right">
+				<button class="btn comentarios"><i class="icon-comment"></i>10</button>
+				<button class="btn curtir"><i class="icon-thumbs-up"></i>12</button>
+				<button class="btn descurtir"><i class="icon-thumbs-down"></i>2</button>
+				<button class="btn" onclick="edit('{{url_for('blog.edit_post', post_id=post.id)}}');"><i class="icon-edit"></i></button>
+				<button class="btn source"><i class="icon-download-alt"></i></button>
 			</div>
+			<h1>{{post.title}}</h1>
+			<h4>Data: {{post.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
+			<h4>Url Curta: <a href="http://berlotto.net/u/123">http://berlotto.net/u/123</a></h4>
 
-			<div id="div-comment">
+		</header>
+		{% if post.picture %}
+		<a href="#" class="thumbnail span2 postbanner">
+			<img src="http://placehold.it/200x150" alt="">
+		</a>
+		{%endif%}
+		<div class="content">{{post.content|translate_markdown|safe}}</div>
+	</article>
+	<br><br>
 
-				<form id="form-comentario" method="POST" action="{{url_for('blog.save_comment')}}" class="well form-vertical">
-					<h3>Enviar comentário</h3>
-					<label for="title">Título:</label><input type="text" id="title" name="title" class="span6">
-					<label for="nome">Nome:</label><input type="text" id="name" name="name" class="span6">
-					<label for="email">Email:</label><input type="text" id="email" name="email" class="span6">
-					<label for="content">Comentário:</label>
-					<textarea id="content" name="content" class="span8"></textarea>
-					<input type="submit" value="Comentar" class="btn pull-right">
-				</form>
+	<h4 id="title-comments" class="fechado">Comentários:</h4>
+	<div class="comments">
+		<div class="comment">
+			<div class="comment-header span6">
+				<span>Autor: Usuário 1</span>
+				<span>Data: 01/01/2012</span>
 			</div>
+			<div class="span1">
+				<i class="icon-thumbs-up"></i>
+				<i class="icon-thumbs-down"></i>
+			</div>
+			<div class="comment-content">
+				<img src="{{'emailqnaoexiste@teste.com.br'|gravatar}}" alt="" class="img-polaroid">
+				<p class="offset1 span6">{{lipsum(n=1, html=True, min=5, max=30)}}</p>
+			</div>
+		</div>
+		<div class="comment">
+			<div class="comment-header">
+				<div class="span1 offset6">
+					<i class="icon-thumbs-up"></i>
+					<i class="icon-thumbs-down"></i>
+				</div>
+				<span>Autor: Usuário 2</span>
+				<span>Data: 01/01/2012</span>
+			</div>
+			<div class="comment-content">
+				<img src="{{'sergio.berlotto@gmail.com'|gravatar}}" alt="" class="img-polaroid">
+				<p>{{lipsum(n=1, html=True, min=5, max=30)}}</p>
+			</div>
+		</div>
+	</div>
+<br>
+	<div id="div-comment">
 
-		<hr>
+		<form id="form-comentario" method="POST" action="{{url_for('blog.save_comment')}}" class="well">
+			<h4>Enviar comentário:</h4>
+			<div class="controls controls-row">
+				<label for="nome" class="span1">Nome:</label><input type="text" id="name" name="name" class="span7" placeholder="Seu nome">
+				<label for="email" class="span1">Email:</label><input type="text" id="email" name="email" class="span7" placeholder="Seu email">
+			</div>
+			<div class="controls controls-row">
+				<label class="span1" for="content">Comentário:</label>
+				<textarea id="content" name="content" class="span8" placeholder="Comente aqui..."></textarea>
+			</div>
+			    <button type="submit" class="offset7 btn btn-primary">Enviar</button>
+		</form>
+	</div>
 
-	</section>
+	<hr>
+
+</section>
 
 {% include 'sidebar.html' %}
 
@@ -115,8 +124,20 @@ edit = function(url){
     $(document).ready(function() {
         // bind 'form-comentario' and provide a simple callback function
         $('#form-comentario').ajaxForm(function() {
-            alert("Thank you for your comment!");
+        	alert("Thank you for your comment!");
         });
+        $('#title-comments').click(function(){
+        	$('.comments').animate({
+        		height: 'toggle',
+        	}, 500, function(){
+        		$('#title-comments').toggleClass('aberto','fechado');
+        	})
+        });
+
+        $('.comments').animate({
+    		height: 'hide',
+    	})
     });
+
 </script>
 {% endblock %}

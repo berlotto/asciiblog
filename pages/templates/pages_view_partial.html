@@ -1,0 +1,14 @@
+
+<section class="span9 artigo">
+
+		<article>
+		<header>
+			<h1>{{page.title}}</h1>
+			<h4>Data: {{page.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
+
+		</header>
+		<div class="content">{{page.content|translate_markdown|safe}}</div>
+		</article>
+
+</section>
+

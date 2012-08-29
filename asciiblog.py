@@ -29,6 +29,23 @@ def translate_markdown(env, texto):
 		html = Markup(html)
 	return html
 
+@app.template_filter()
+@evalcontextfilter
+def gravatar(env, email):
+	import urllib, hashlib
+	default = 'http://localhost:8000'+url_for('static', filename='img/default_gravatar.png')
+	print default
+	size = 40
+
+	# construct the url
+	gravatar_url = "http://www.gravatar.com/avatar/" + hashlib.md5(email.lower()).hexdigest() + "?"
+	gravatar_url += urllib.urlencode({'d':default, 's':str(size)})
+
+	if env.autoescape:
+		gravatar_url = Markup(gravatar_url)
+
+	return gravatar_url
+
 #========================================= Blueprint Applications
 from blog import blog
 from blog.models import Post, Comment
@@ -61,6 +78,11 @@ def slugfy():
 	text = request.args['text']
 	return jsonify(slug=slug(text))
 
+@app.route('/oauth_token')
+def instagram_token():
+	if 'access_token' in request.args:
+		app.config['instagram_token'] = request.args['access_token']
+
 #========================================= ROUTE FOR PAGES
 @app.route('/<slug>/')
 def page_(slug):
@@ -73,4 +95,4 @@ def page_(slug):
 
 #========================================= MAIN APP
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8000, debug=True)

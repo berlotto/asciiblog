@@ -41,12 +41,19 @@ article{
 
 .comment .comment-header{
 	font-weight: bold;
+	font-size: 11px;
 	clear: both;
 	margin-top: 5px;
+	background: #fff;
+	border-radius: 3px;
 }
 
-.comment span{
-	display: block;
+.comment {
+	/*display: block;*/
+	/*background-color: #c5c5c5;*/
+	border-top: 1px solid #bbb;
+	border-radius: 3px;
+	padding: 5px;
 }
 
 .comment .comment-content{
@@ -97,4 +104,8 @@ footer{
 	background: -moz-linear-gradient(top, #F2F2F2 , #fff) repeat scroll 0 0 transparent;
 	padding-top: 10px;
 	height: 200px;
+}
+
+div#facebox{
+	height: 300px !important;
 }

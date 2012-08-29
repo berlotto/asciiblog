@@ -37,7 +37,7 @@
 {% include 'mensagens.html' %}
 
 <!-- http://www.tidbits.com.br/como-fazer-accordion-simples-com-jquery-em-5-linhas-de-codigo -->
-	<a id="btn-ajuda" class="btn btn-info pull-right">Ajuda</a>
+	<a id="btn-ajuda" rel="facebox" href="/pages/help-edit/?partial" class="btn btn-info pull-right">Ajuda</a>
 	<form id="form-new-post" class="well form-horizontal" enctype="multipart/form-data" action="{{url_for('blog.save_post')}}" method="POST">
 	{% if post %}
 		<h1 id="acao">Editar post</h1>
@@ -78,9 +78,10 @@
 <script type="text/javascript" src="{{url_for('blog.static', filename="js/new-post.js")}}"></script>
 <script type="text/javascript">
 $(function(){
-	$('#btn-ajuda').click(function(){
-		
-	});
+	$('a[rel*=facebox]').facebox({
+		loadingImage : "{{url_for('static',filename='facebox/loading.gif')}}",
+		closeImage   : "{{url_for('static',filename='facebox/closelabel.png')}}"
+	}, 'facealto');
 		
 });
 $('#myModal').hide();
