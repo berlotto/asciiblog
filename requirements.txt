@@ -15,4 +15,3 @@ oauth2==1.5.211
 python-twitter==0.8.2
 simplejson==2.6.1
 wsgiref==0.1.2
-pysqlite==2.6.3
