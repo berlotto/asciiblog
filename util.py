@@ -63,7 +63,10 @@ def last_contents():
 	if not max_post_id:
 		max_post_id = db.session.query(func.count(Post.id)).first()[0]
 		cache.set('max_post_id',max_post_id)
-	random_ids = list(set([random.randint(1,max_post_id) for x in xrange(10)])) #10 ids aleatorios para o array
+	if max_post_id > 1:
+		random_ids = list(set([random.randint(1,max_post_id) for x in xrange(10)])) #10 ids aleatorios para o array
+	else:
+		random_ids = []
 	#this have max 10 posts, and not set in cache!
 	random_posts = Post.query.filter(Post.id.in_(random_ids)).all()
 

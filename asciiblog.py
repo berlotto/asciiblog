@@ -10,7 +10,26 @@ import os
 
 #========================================= CONFIGURATION
 app = Flask(__name__)
-app.config.from_pyfile('asciiblog.cfg')
+try:
+	app.config.from_pyfile('asciiblog.cfg')
+except:
+	print('-> Config from env vars')
+	# Generate with os.urandom(24)
+	SECRET_KEY=os.environ.get('SECRET_KEY','O\xde\xbe\xe5\x18\xa3\x18\xcdFos\xd1\x03(\xba\xd59+\x97&\xa2D\x9cb')
+	#Folder where files wil be uploaded
+	UPLOADED_POSTFILE_DEST = os.environ.get('UPLOADED_POSTFILE_DEST', './static/uploads/')
+	#Url for access the uploaded files
+	UPLOADED_FILE_URL=os.environ.get('UPLOADED_FILE_URL','/static/uploads/')
+	SESSION_COOKIE_NAME=os.environ.get('SESSION_COOKIE_NAME','asciiblog')
+	SESSION_COOKIE_SECURE=False
+	POSTS_PER_PAGE=os.environ.get('POSTS_PER_PAGE',5)
+	SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI','postgresql://asciiblog:asciiblog@localhost:5432/asciiblog')
+	TWITTER_CONSUMER_KEY=os.environ.get('TWITTER_CONSUMER_KEY',"")
+	TWITTER_CONSUMER_SECRET=os.environ.get('TWITTER_CONSUMER_SECRET',"")
+	TWITTER_ACCESS_TOKEN=os.environ.get('TWITTER_ACCESS_TOKEN',"")
+	TWITTER_ACCESS_TOKEN_SECRET=os.environ.get('TWITTER_ACCESS_TOKEN_SECRET',"")
+	pass
+
 
 db = SQLAlchemy(app)
 
