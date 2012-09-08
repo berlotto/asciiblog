@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+  <script src="{{url_for('static', filename="js/scrollpagination.js")}}"></script>
+
+{% endblock %}
+
+{% block content %}
+
+	<section id="artigos" class="offset5 span7">
+
+		<h1>Oops !</h1>
+
+	</section>
+	<section id="artigos" class="offset1 span10">
+
+		<p>Infelizmente ocorreu um erro na página que quer acessar, mas você 
+			pode ir para a página inicial e tentar por outro caminho, ou utilizar o meu acima.</p>
+
+	</section>
+
+{% endblock %}
+
+{% block bottompage %}
+  <script src="{{url_for('blog.static', filename="js/index.js")}}"></script>
+{% endblock %}

@@ -4,6 +4,7 @@ from datetime import datetime
 from model import Page
 from werkzeug.contrib.cache import MemcachedCache, SimpleCache
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.login import login_required
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound
 from flaskext.uploads import UploadNotAllowed
@@ -34,6 +35,7 @@ def view(slug):
 		return abort(404)
 
 @pages.route('/edit/<slug>/')
+@login_required
 def edit(slug):
 	try:
 		pagina = Page.query.filter(Page.slug==slug).one()
@@ -52,11 +54,13 @@ def index():
 
 
 @pages.route('/new')
+@login_required
 def new():
 	return render_template('pages_new.html')
 
 
 @pages.route('/save/',methods = ['POST',])
+@login_required
 def save():
 	try:
 		add = False
@@ -99,5 +103,6 @@ def save():
 
 
 @pages.route('/delete/',methods = ['POST',])
+@login_required
 def delete():
 	pass

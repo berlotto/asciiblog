@@ -30,6 +30,9 @@
 	<!-- For call functions after stop typing on inputs -->
 	<script src="{{url_for('static', filename="js/jquery.typing-0.2.0.min.js")}}"></script>
 
+	<!-- flip effect on logo -->
+	<script src="{{url_for('static', filename="js/jquery.flip.min.js")}}"></script>
+
   <!-- http://blueimp.github.com/jQuery-File-Upload/ for media gallery -->
 
 	{% block head %}
@@ -50,49 +53,56 @@
 	<div class="container">
 		<div class="row page-header">
 
-			<header class="span3">
-				<a href="/"><img src="{{url_for('static', filename='img/logotipo-b.png')}}"></a>
+			<header class="span3 logotype-container">
+				<a href="/"><img class="logotype" src="{{url_for('static', filename='img/logotipo-b.png')}}"></a>
 			</header>
 
-			<div class="navbar span8 offset1">
-				<div  id="menu" class="navbar-inner">
+			{%if is_authenticated()%}
+			<div class="span7 offset2">
+			{%else%}
+			<div class="span6 offset3">
+			{%endif%}
 					<!-- <ul class="nav nav-pills pull-right"> -->
-					<ul class="nav nav-pills pull-right">
-						<li class="active"><a href="/"><i class="icon-home"></i>&nbsp;Home</a></li>
-						<li><a href="/blog">Blog</a></li>
-						<li><a href="/livro">Livro</a></li>
-						<li><a href="#">Encurtador</a></li>
-						<li><a href="#">Fotos</a></li>
-						<li><a href="/contatos">Contato</a></li>
-						<li><a href="/projetos">Projetos</a></li>
+					<ul class="nav nav-pills">
+						<li class="{%if current_url() == '/'%}active{%endif%}"><a href="/"><i class="icon-home"></i>&nbsp;Home</a></li>
+						<li class="{%if current_url() == '/blog/'%}active{%endif%}"><a href="/blog"><i class="icon-list"></i>&nbsp;Blog</a></li>
+						<li class="{%if current_url() == '/pages/livro/'%}active{%endif%}"><a href="/livro"><i class="icon-book"></i>&nbsp;Livro</a></li>
+						<li><a href="#"><i class="icon-camera"></i>&nbsp;Fotos</a></li>
+						<li class="{%if current_url() == '/pages/contatos/'%}active{%endif%}"><a href="/contatos"><i class="icon-envelope"></i>&nbsp;Contato</a></li>
+						<li class="{%if current_url() == '/pages/projetos/'%}active{%endif%}"><a href="/projetos"><i class="icon-hdd"></i>&nbsp;Projetos</a></li>
+						{%if is_authenticated()%}
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i>&nbsp;Administração <b class="caret"></b></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i>&nbsp;Admin <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li class="nav-header">Blog</li>
+								<li class="nav-header">- Blog -</li>
 								<li><a href="{{url_for('blog.list_posts')}}">Posts</a></li>
 								<li><a href="{{url_for('blog.new_post')}}">New post</a></li>
 								<li><a href="{{url_for('media.index')}}">Media</a></li>
 								<li><a href="#">Comentários</a></li>
-								<li class="nav-header">Encurtador</li>
-								<li><a id='link-links' href="#">Links</a></li>
-								<li><a href="#">Encurtar</a></li>
-								<li class="nav-header">Páginas</li>
+								<li class="nav-header">- Encurtador -</li>
+								<li><a id='link-links' href="/links" title="Ver links encurtados">Links</a></li>
+								<li class="nav-header">- Páginas -</li>
 								<li><a href="{{url_for('pages.index')}}">Páginas</a></li>
 								<li><a href="{{url_for('pages.new')}}">Nova Pagina</a></li>
-								<li class="nav-header">Usuário</li>
-								<li><a href="#">Usuários</a></li>
-								<li><a href="#">Logout</a></li>
+								<li class="nav-header">- Usuário [{{user.login}}] -</li>
+								<!-- <li><a href="#">Usuários</a></li> -->
+								<li><a href="/user/logout/">Logout</a></li>
 								<li class="divider"></li>
-								<li><a href="/configuration">Configuration</a></li>
+								<!-- <li><a href="/configuration">Configuration</a></li> -->
 							</ul>
 						</li>
+						<li>
+							<a href="#" rel="tooltip" title="{{user.name}}"><i class="icon-user"></i></a>
+						</li>
+						{%else%}
+						<!-- <li class="dropdown"><a href="/user/login/">Entrar</a></li> -->
+						<li class="{%if current_url() == '/user/login/'%}active{%endif%}"><a href="/user/login/" title="Entrar"><i class='icone ilogin'></i></a></li>
+						{%endif%}
 					</ul>
-				</div>
 			</div>
 		</div>
 
 		<div class="row">
-
 
 			{% block content %}
 			{% endblock %}
@@ -117,7 +127,17 @@
 				</ul>
 			</div>
 			<div class="span3">
-				Uma imagem legal...
+				<img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_072_bookmark.png') }}" title="Adicionar aos bookmarks">
+				<img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_362_google+_alt.png') }}" title="Meu perfil no Google+">
+				<img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_377_linked_in.png') }}" title="Meu perfil no Linkedin">
+				<img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_382_youtube.png') }}" title="Meu perfil no Youtube">
+				<br>
+				<img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_390_facebook.png') }}" title="Meu perfil no Facebook">
+				<img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_392_twitter.png') }}" title="Meu perfil no Twitter">
+				<a href="{{url_for('feed')}}"><img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_397_rss.png') }}" title="Acompanhe os posts através do FEED"></a>
+				<img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_398_skype.png') }}" title="Meu login no Skype [sergio.berlotto]">
+				<br>
+				<a href="mailto:&#115;&#101;&#114;&#103;&#105;&#111;&#046;&#098;&#101;&#114;&#108;&#111;&#116;&#116;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"><img class="img-polaroid footer-icone" src="{{ url_for('static', filename='img/icones/glyphicons_399_e-mail.png') }}" title="Mande-me um email"></a>
 			</div>
 		</footer>
 
@@ -157,7 +177,9 @@ $(function(){
 		placement: 'bottom',
 		trigger: 'hover'
 	};
-	$('.comentarios').tooltip(options)	
+	$('.comentarios').tooltip(options)
+
+	
 });
 
 </script>

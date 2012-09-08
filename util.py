@@ -1,8 +1,10 @@
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy import func
 from sqlalchemy.sql.operators import ColumnOperators
 from werkzeug.contrib.cache import MemcachedCache, SimpleCache
 from blog.models import Post, Comment
+from general.models import Link, Like
 from json import loads
 from urllib import urlopen
 from flask import current_app
@@ -10,12 +12,48 @@ import flickrapi
 import feedparser
 import random
 import twitter
+import bitly_api
+from bitly_api.bitly_api import BitlyError
 
 #Deve ser configuravel atraves do asciiblog.cfg
 cache = SimpleCache()
 #cache = MemcachedCache(['127.0.0.1:11211'])
 
 db = SQLAlchemy()
+
+def get_web_title(url):
+	"""
+	Retorna o titulo de uma webpage
+	"""
+	import urllib
+	import BeautifulSoup
+	soup = BeautifulSoup.BeautifulSoup(urllib.urlopen(url))
+	return soup.title.string
+
+
+#Encurtador
+def encurtar(url):
+	bitly = bitly_api.Connection(current_app.config['BITLY_USER'],current_app.config['BITLY_API_KEY'])
+	try:
+		encurtado = Link.query.filter(Link.url==url).one()
+		shorten = encurtado.short_url
+
+	except NoResultFound:
+		try:
+			shorten = bitly.shorten(url)['url']
+			l = Link()
+			l.url = url
+			l.short_url = shorten
+			l.sidebar = False
+			#l.title = get_web_title(url)
+			db.session.add(l)
+			db.session.commit()
+
+		except BitlyError:
+			print "Erro ao encurtar com o bit.ly"
+			shorten = ''
+
+	return shorten
 
 # api.update_status('Updating using OAuth authentication via Tweepy!') #this write to timeline
 #========================================= UTIL METHODS

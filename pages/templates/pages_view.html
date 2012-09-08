@@ -21,12 +21,13 @@ edit = function(url){
 		    	<div class="btn-group pull-right">
 				    <button class="btn curtir"><i class="icon-thumbs-up"></i>12</button>
 				    <button class="btn descurtir"><i class="icon-thumbs-down"></i>2</button>
+				    {%if is_authenticated()%}
 				    <button class="btn" onclick="edit('{{url_for('pages.edit', slug=page.slug)}}');"><i class="icon-edit"></i></button>
+				    {%endif%}
 				    <button class="btn source"><i class="icon-download-alt"></i></button>
 			    </div>
 				<h1>{{page.title}}</h1>
-				<h4>Data: {{page.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
-				<h4>Url Curta: <a href="http://berlotto.net/u/123">http://berlotto.net/u/123</a></h4>
+				<p>Url Curta: <a href="http://berlotto.net/u/123">http://berlotto.net/u/123</a></p>
 
 			</header>
 			<div class="content">{{page.content|translate_markdown|safe}}</div>

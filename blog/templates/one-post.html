@@ -10,26 +10,6 @@ edit = function(url){
 </script>
 <style type="text/css">
 
-.fechado {
-	border-width:1px;
-	border-style:solid;
-	border-color: #C9C9C9;
-	background:#eee url(/static/img/arrow-down.gif) no-repeat 98% 50%;
-	padding: 3px;
-	border-radius:5px;
-}
-
-.aberto {
-	border-radius:5px;
-	border-width:1px;
-	border-color: #C9C9C9;
-	border-style:solid;
-	background:#eee url(/static/img/arrow-up.gif) no-repeat 98% 50%;
-	padding: 3px;
-}
-.comment{
-	/*display: none;*/
-}
 </style>
 {% endblock %}
 
@@ -45,12 +25,16 @@ edit = function(url){
 				<button class="btn comentarios"><i class="icon-comment"></i>10</button>
 				<button class="btn curtir"><i class="icon-thumbs-up"></i>12</button>
 				<button class="btn descurtir"><i class="icon-thumbs-down"></i>2</button>
+				{%if is_authenticated()%}
 				<button class="btn" onclick="edit('{{url_for('blog.edit_post', post_id=post.id)}}');"><i class="icon-edit"></i></button>
+				{%endif%}
 				<button class="btn source"><i class="icon-download-alt"></i></button>
 			</div>
 			<h1>{{post.title}}</h1>
-			<h4>Data: {{post.date_created.strftime('%d/%B/%Y %H:%M:%S')}}</h4>
-			<h4>Url Curta: <a href="http://berlotto.net/u/123">http://berlotto.net/u/123</a></h4>
+			<p>Data: {{post.date_created.strftime('%d de %B de %Y')}}</p>
+			{%if post.short_url%}
+			<p>Url Curta: <a href="http://berlotto.net/u/123">{{post.short_url}}</a></p>
+			{%endif%}
 
 		</header>
 		{% if post.picture %}
@@ -62,54 +46,43 @@ edit = function(url){
 	</article>
 	<br><br>
 
-	<h4 id="title-comments" class="fechado">Comentários:</h4>
-	<div class="comments">
-		<div class="comment">
-			<div class="comment-header span6">
-				<span>Autor: Usuário 1</span>
-				<span>Data: 01/01/2012</span>
-			</div>
-			<div class="span1">
-				<i class="icon-thumbs-up"></i>
-				<i class="icon-thumbs-down"></i>
-			</div>
-			<div class="comment-content">
-				<img src="{{'emailqnaoexiste@teste.com.br'|gravatar}}" alt="" class="img-polaroid">
-				<p class="offset1 span6">{{lipsum(n=1, html=True, min=5, max=30)}}</p>
-			</div>
-		</div>
-		<div class="comment">
-			<div class="comment-header">
-				<div class="span1 offset6">
-					<i class="icon-thumbs-up"></i>
-					<i class="icon-thumbs-down"></i>
-				</div>
-				<span>Autor: Usuário 2</span>
-				<span>Data: 01/01/2012</span>
-			</div>
-			<div class="comment-content">
-				<img src="{{'sergio.berlotto@gmail.com'|gravatar}}" alt="" class="img-polaroid">
-				<p>{{lipsum(n=1, html=True, min=5, max=30)}}</p>
-			</div>
-		</div>
-	</div>
-<br>
 	<div id="div-comment">
 
 		<form id="form-comentario" method="POST" action="{{url_for('blog.save_comment')}}" class="well">
+			<input type="hidden" name="post_id" value="{{post.id}}">
 			<h4>Enviar comentário:</h4>
 			<div class="controls controls-row">
-				<label for="nome" class="span1">Nome:</label><input type="text" id="name" name="name" class="span7" placeholder="Seu nome">
-				<label for="email" class="span1">Email:</label><input type="text" id="email" name="email" class="span7" placeholder="Seu email">
+				<label for="nome" class="span1">Nome:</label><input type="text" id="name" name="name" maxlength="150" class="span3" placeholder="Seu nome">
+				<label for="email" class="span1">Email:</label><input type="text" id="email" name="email" maxlength="500" class="span3" placeholder="Seu email">
 			</div>
 			<div class="controls controls-row">
 				<label class="span1" for="content">Comentário:</label>
-				<textarea id="content" name="content" class="span8" placeholder="Comente aqui..."></textarea>
+				<textarea id="content" name="content" class="span8" maxlength="2000" placeholder="Comente aqui..."></textarea>
 			</div>
 			    <button type="submit" class="offset7 btn btn-primary">Enviar</button>
+			<div id="comentario-msg"></div>
 		</form>
 	</div>
 
+	<h4 id="title-comments" class="fechado">Comentários:</h4>
+	<div class="comments">
+		{%for com in comentarios%}
+		<dl>
+			<dt>
+				<img src="{{com.email|gravatar}}" alt="" title="{{com.name}}" class="img-rounded">
+				Autor: {{com.name}}, em {{com.date_created.strftime('%d/%B/%Y %H:%M:%S')}}
+				<a href="/curtir/comment/{{com.id}}" title="Gostei"><i class="icon-thumbs-up"></i></a>
+				<a href="/ncurtir/comment/{{com.id}}" title="Não Gostei"><i class="icon-thumbs-down"></i></a>
+			<dt>
+			<dd>
+				<!-- {{lipsum(n=1, html=True, min=5, max=30)}} -->
+				{{com.content}}
+			</dd>
+		<dl>
+		{%else%}
+		<p>Ainda sem nenhum comentário neste post. Seja o primeiro a enviar sua opinião!</p>
+		{%endfor%}
+	</div>
 	<hr>
 
 </section>
@@ -123,20 +96,38 @@ edit = function(url){
     // wait for the DOM to be loaded
     $(document).ready(function() {
         // bind 'form-comentario' and provide a simple callback function
-        $('#form-comentario').ajaxForm(function() {
-        	alert("Thank you for your comment!");
-        });
-        $('#title-comments').click(function(){
-        	$('.comments').animate({
-        		height: 'toggle',
-        	}, 500, function(){
-        		$('#title-comments').toggleClass('aberto','fechado');
-        	})
-        });
+        showResponse = function(data, statusText, xhr, $form) {
+        	//alert(data.message);
+        	$('#comentario-msg').html(data.message);
+        };
+        var options = { 
+	        //target:        '#output1',   // target element(s) to be updated with server response 
+	        //beforeSubmit:  showRequest,  // pre-submit callback 
+	        success:       showResponse,  // post-submit callback 
+	 
+	        // other available options: 
+	        //url:       url         // override for form's 'action' attribute 
+	        //type:      'post',        // 'get' or 'post', override for form's 'method' attribute 
+	        dataType:  'json',        // 'xml', 'script', or 'json' (expected server response type) 
+	        clearForm: true,        // clear all form fields after successful submit 
+	        resetForm: true        // reset the form after successful submit 
+	 
+	        // $.ajax options can be used here too, for example: 
+	        //timeout:   3000 
+	    }; 
+        $('#form-comentario').ajaxForm(options);
 
-        $('.comments').animate({
-    		height: 'hide',
-    	})
+        // $('#title-comments').click(function(){
+        // 	$('.comments').animate({
+        // 		height: 'toggle',
+        // 	}, 500, function(){
+        // 		$('#title-comments').toggleClass('aberto','fechado');
+        // 	})
+        // });
+
+     //    $('.comments').animate({
+    	// 	height: 'hide',
+    	// })
     });
 
 </script>

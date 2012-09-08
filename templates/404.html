@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+  <script src="{{url_for('static', filename="js/scrollpagination.js")}}"></script>
+
+{% endblock %}
+
+{% block content %}
+
+	<section id="artigos" class="offset4 span8">
+
+		<h1>Página não encontrada</h1>
+
+	</section>
+	<section id="artigos" class="offset1 span10">
+
+		<p>Infelizmente esta página que você está procurando não foi encontrada, mas de repente você 
+			pode ir para a página inicial e tentar por outro caminho, ou utilizar o meu acima.</p>
+
+	</section>
+
+{% endblock %}
+
+{% block bottompage %}
+  <script src="{{url_for('blog.static', filename="js/index.js")}}"></script>
+{% endblock %}

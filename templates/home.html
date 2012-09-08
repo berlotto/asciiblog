@@ -7,39 +7,36 @@
 
 {% block content %}
 
-	<section class="span12">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <section class="span12">
+    {% for message in messages %}
+      <div class="alert">{{ message }}</div>
+    {% endfor %}
+  </section>
+  {% endif %}
+{% endwith %}
 
+	<section class="span12">
 	    <div id="myCarousel" class="carousel slide">
 		    <!-- Carousel items -->
 		    <div class="carousel-inner">
-			    <div class="active item">
-			    	<img src="{{url_for('blog.static',filename='post-images/placehold.png')}}" alt="">
-			    	<div class="carousel-caption">
-			    		<h4><a href="/post/meu-primeiro-post">First Thumbnail label</a></h4>
-			    		<p>Saiba mais sobre este post!.</p>
-			    	</div>
-			    </div>
-			    <div class="item">
-			    	<img src="{{url_for('blog.static',filename='post-images/placehold.png')}}" alt="">
-			    	<div class="carousel-caption">
-			    		<h4><a href="/post/meu-primeiro-post">First Thumbnail label</a></h4>
-			    		<p>Saiba mais sobre este post!.</p>
-			    	</div>
-			    </div>
-			    <div class="item">
+		    	{%for fp in featured_posts%}
+				    <div class="{%if loop.first%}active{%endif%} item">
+				    	<img src="{{fp.picture_url}}" alt="">
+				    	<div class="carousel-caption">
+				    		<h4><a href="{{url_for('blog.view_post',slug=fp.slug)}}">{{fp.title}}</a></h4>
+				    		<p>{{fp.resume}}</p>
+				    	</div>
+				    </div>
+		    	{%endfor%}
+<!-- 			    <div class="item">
 			    	<img  src="{{url_for('blog.static',filename='post-images/placehold.png')}}" alt="">
 			    	<div class="carousel-caption">
 			    		<h4><a href="/post/meu-primeiro-post">First Thumbnail label</a></h4>
 			    		<p>Saiba mais sobre este post!.</p>
 			    	</div>
-			    </div>
-			    <div class="item">
-			    	<img  src="{{url_for('blog.static',filename='post-images/placehold.png')}}" alt="">
-			    	<div class="carousel-caption">
-			    		<h4><a href="/post/meu-primeiro-post">First Thumbnail label</a></h4>
-			    		<p>Saiba mais sobre este post!.</p>
-			    	</div>
-			    </div>
+			    </div> -->
 		    </div>
 		    <!-- Carousel nav -->
 		    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>

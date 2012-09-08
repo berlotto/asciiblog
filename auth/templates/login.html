@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('auth.static', filename='css/auth.css') }}"/>
+<script src="{{ url_for('auth.static', filename='js/auth.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+	<section class="span12">
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-error">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+		<form class="form-horizontal offset3" method="POST" action="/user/login/{%if next%}?next={{next}}{%endif%}">
+			<div class="control-group">
+				<label class="control-label" for="inputLogin">Usuário</label>
+				<div class="controls">
+					<input type="text" name="inputLogin" id="inputLogin" placeholder="Usuario">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputPassword">Senha</label>
+				<div class="controls">
+					<input type="password" name="inputPassword" id="inputPassword" placeholder="Senha">
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn">Entrar</button>
+				</div>
+			</div>
+		</form>
+
+	</section>
+
+	
+
+{% endblock %}
+
+
+{% block bottompage %}
+
+
+{% endblock %}

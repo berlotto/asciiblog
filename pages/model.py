@@ -7,7 +7,7 @@ db = SQLAlchemy()
 
 class Page(db.Model):
 	__tablename__ = 'page'
-	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	id = db.Column(db.Integer,  db.Sequence('page_id'), primary_key=True)
 	title = db.Column(db.String(150))
 	slug = db.Column(db.String(500), unique=True)
 	content = db.Column(db.Text)

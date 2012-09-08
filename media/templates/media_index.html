@@ -1,32 +1,37 @@
 {% extends "base.html" %}
 
 {% block head %}
-
+<link href="{{ url_for('static', filename='filedrag/filedrag.css')}}" media="screen" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="span12">
-        <h1>Arquivos de mídia</h1><br>&nbsp;
-    </div>
-</div>
-<div class="row">
     <div class="span12">
     <!-- The file upload form used as target for the file upload widget -->
-    <form id="fileupload" action="{{url_for('media.upload')}}" method="POST" enctype="multipart/form-data">
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
         <div class="row fileupload-buttonbar">
-            <div class="span7">
-                <!-- The fileinput-button span is used to style the file input field as button -->
-                <input type="file" name="files[]" multiple>
-                <button type="submit" class="btn btn-primary start">
-                    <i class="icon-upload icon-white"></i>
-                    <span>Start upload</span>
-                </button>
+            <div class="span12">
+
+                <form id="upload" class="well" action="{{url_for('media.upload')}}" method="POST" enctype="multipart/form-data">  
+                    <fieldset>  
+                        <legend>Arquivos de Mídia</legend>  
+                        <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />  
+                        <div>  
+                            <label for="fileselect">Files to upload:</label>  
+                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />  
+                            <div id="filedrag" class="filearea">ou arraste e solte os arquivos aqui</div>  
+                        </div>  
+                        <!-- The loading indicator is shown during file processing -->
+                        <div id="messages">
+                        &nbsp;
+                        </div>
+                        <div id="progress"></div>
+                        <button type="submit" id="submitbutton" class="btn btn-large btn-block">Upload Files</button>
+                    </fieldset>  
+                </form>  
+
             </div>
         </div>
-        <!-- The loading indicator is shown during file processing -->
-        <div class="fileupload-loading"></div>
+
         <br>
         <!-- The table listing the files available for upload/download -->
         <table role="presentation" class="table table-striped">
@@ -79,7 +84,6 @@
                 </tr>
             </tbody>
         </table>
-    </form>
     <br>
 
 </div></div>
@@ -109,9 +113,8 @@
             <i class="icon-arrow-right icon-white"></i>
         </a>
     </div>
-</div>
 {%endblock%}
 
 {%block bottompage%}
-
+<script src="{{url_for('static', filename="filedrag/filedrag.js")}}"></script>
 {%endblock%}

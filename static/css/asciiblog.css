@@ -109,3 +109,43 @@ footer{
 div#facebox{
 	height: 300px !important;
 }
+
+
+/*MEUS ICONES*/
+.ilogin {
+	background-image: url("../img/icones/glyphicons_203_lock.png");
+}
+
+.icone{
+    background-repeat: no-repeat;
+    background-size: 12px 14px;
+    display: inline-block;
+    height: 14px;
+    line-height: 16px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+}
+
+/*Effects to logotype img \/ */
+.logotype{
+	padding: 10px;
+	/*border: 5px solid #eee;*/
+	/*-webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+	-moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.2);*/
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+}
+.logotype:hover{
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+	-o-transform: rotate(-7deg);
+}
+
+/*Effects to logotype img /\*/
+
+.footer-icone{
+	margin-bottom: 3px;
+}

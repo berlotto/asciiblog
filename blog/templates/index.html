@@ -43,8 +43,11 @@
 			</div>
 			</article>
 		<hr>
+		{%else%}
+			<img src="{{url_for('static', filename='img/finish_flag.png')}}">
+			<div class="offset3">Infelizmente não há posts para serem lidos!</div>
+			<script type="text/javascript">cancel_loading = true;</script>
 		{%endfor%}
-
 	</section>
 
 	{% include 'sidebar.html' %}

@@ -3,9 +3,12 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug.contrib.cache import MemcachedCache, SimpleCache
+from general.models import Link, Like
 from jinja2 import evalcontextfilter, Markup, escape
+from flask.ext.login import login_required, current_user
 import markdown
 import util
+import traceback
 import os
 
 #========================================= CONFIGURATION
@@ -13,29 +16,34 @@ app = Flask(__name__)
 try:
 	app.config.from_pyfile('asciiblog.cfg')
 except:
-	print('-> Config from env vars')
-	# Generate with os.urandom(24)
-	SECRET_KEY=os.environ.get('SECRET_KEY','O\xde\xbe\xe5\x18\xa3\x18\xcdFos\xd1\x03(\xba\xd59+\x97&\xa2D\x9cb')
-	#Folder where files wil be uploaded
-	UPLOADED_POSTFILE_DEST = os.environ.get('UPLOADED_POSTFILE_DEST', './static/uploads/')
-	#Url for access the uploaded files
-	UPLOADED_FILE_URL=os.environ.get('UPLOADED_FILE_URL','/static/uploads/')
-	SESSION_COOKIE_NAME=os.environ.get('SESSION_COOKIE_NAME','asciiblog')
-	SESSION_COOKIE_SECURE=False
-	POSTS_PER_PAGE=os.environ.get('POSTS_PER_PAGE',5)
-	SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI','postgresql://asciiblog:asciiblog@localhost:5432/asciiblog')
-	TWITTER_CONSUMER_KEY=os.environ.get('TWITTER_CONSUMER_KEY',"")
-	TWITTER_CONSUMER_SECRET=os.environ.get('TWITTER_CONSUMER_SECRET',"")
-	TWITTER_ACCESS_TOKEN=os.environ.get('TWITTER_ACCESS_TOKEN',"")
-	TWITTER_ACCESS_TOKEN_SECRET=os.environ.get('TWITTER_ACCESS_TOKEN_SECRET',"")
-	pass
-
+	print('-> Config file not found!')
 
 db = SQLAlchemy(app)
 
 #Deve ser configuravel atraves do asciiblog.cfg
 cache = SimpleCache()
 #cache = MemcachedCache(['127.0.0.1:11211'])
+
+#+======================================== CONTEXT PROCESSORS
+@app.context_processor
+def inject_user():
+	#Adiciona o usuario corrent no contexto dos templates
+    return dict(user=current_user)
+
+@app.context_processor
+def inject_verify_login():
+	def is_authenticated():
+		if current_user and current_user.is_active() :
+			return True
+		else:
+			return False
+	return dict(is_authenticated=is_authenticated)
+
+@app.context_processor
+def inject_current_url():
+	def current_url():
+		return request.path
+	return dict(current_url=current_url)
 
 #========================================= CUSTOM FILTERS FOR JINJA
 @app.template_filter()
@@ -53,7 +61,7 @@ def translate_markdown(env, texto):
 @evalcontextfilter
 def gravatar(env, email):
 	import urllib, hashlib
-	default = 'http://localhost:8000'+url_for('static', filename='img/default_gravatar.png')
+	default = 'http://'+app.config['SERVER_NAME']+url_for('static', filename='img/default_gravatar.png')
 	print default
 	size = 40
 
@@ -71,25 +79,52 @@ from blog import blog
 from blog.models import Post, Comment
 from media import media
 from pages import pages
+from auth import auth, init_auth
 
 #========================================= UPLOADS
 from flaskext.uploads import UploadSet, configure_uploads, IMAGES, UploadNotAllowed
 
-uploaded_files = UploadSet('postfile')
-configure_uploads(app, uploaded_files)
+uploaded_files = UploadSet('postfile', IMAGES, default_dest=lambda app: 'post-images')
+uploaded_media = UploadSet('media', default_dest=lambda app: 'uploaded-media')
+configure_uploads(app, (uploaded_files, uploaded_media))
 
 #========================================= BLUEPRINTS APPS
+app.register_blueprint(auth, url_prefix='/user')
 app.register_blueprint(blog, url_prefix='/blog')
 blog.register_uploader(uploaded_files)
 app.register_blueprint(media, url_prefix='/media')
 app.register_blueprint(pages, url_prefix='/pages')
 
+init_auth(app)
+
+#========================================= ERROR TEMPLATES
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('500.html'), 500
+
+@app.errorhandler(401)
+def page_not_found(e):
+    return render_template('401.html'), 401
+
+@app.errorhandler(400)
+def page_not_found(e):
+    return render_template('400.html'), 400
 
 #========================================= MAIN ROUTES
 @app.route('/')
 def index():
 	twitts, posts, comments, photo, random_posts = util.last_contents()
-	return render_template('home.html', posts=posts, comments=comments, twitts=twitts, 
+	# fp = cache.get('featured_posts')
+	# if not fp:
+	featured_posts = Post.query.filter(Post.featured=='Y')
+		#cache.set('featured_posts', featured_posts)
+	return render_template('home.html', posts=posts, featured_posts=featured_posts, 
+		                                comments=comments, twitts=twitts, 
 		                                flickr_photo=photo, random_posts=random_posts)
 
 @app.route('/slugfy/')
@@ -112,8 +147,36 @@ def page_(slug):
 	'''
 	return redirect( url_for('pages.view', slug=slug))
 
+#========================================= ROUTE FOR LINKS
+@app.route('/links/')
+@login_required
+def links():
+	try:
+		page = "1"
+		if 'page' in request.args:
+			page = request.args['page']
+		links = Link.query.order_by('id').paginate(page=int(page), per_page=app.config['POSTS_PER_PAGE']).items
+		# links = []
+	except:
+		traceback.print_exc()
+	return render_template('links.html', links=links)
+
+@app.route('/link/edit/<int:link_id>')
+@login_required
+def edit_link(link_id):
+	pass
+
+@app.route('/link/delete/<int:link_id>')
+@login_required
+def delete_link(link_id):
+	pass
+
+#========================================= ROUTE FOR FEEDS
+@app.route('/feed/')
+@login_required
+def feed():
+	pass
 
 #========================================= MAIN APP
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+	app.run(host='0.0.0.0', debug=True)
