@@ -1,12 +1,11 @@
 #! -*- encoding: utf8 -*-
 from instagram.client import InstagramAPI
 
-# access_token="(u'36006801.53b9019.7492fdf5495c4b08ab8cbfe6906c6735', {u'username': u'sberlotto', u'bio': u'Programador, geek, casado com a Danny, pai do Arthur.', u'website': u'http://berlotto.net', u'profile_picture': u'http://images.instagram.com/profiles/profile_36006801_75sq_1333967270.jpg', u'full_name': u'S\xe9rgio Berlotto Jr', u'id': u'36006801'})"
 # Este access_token foi buscado através do script get_access_token
-access_token="36006801.53b9019.7492fdf5495c4b08ab8cbfe6906c6735"
+access_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 api = InstagramAPI(access_token=access_token)
-# api = InstagramAPI(client_id='53b901915a6a4e8a83fc321e4f71eb56', client_secret='5a8ca1ec94bb4aba944dc4cdfb3e633d')
+# api = InstagramAPI(client_id='wwwwwwwwwwwwwww', client_secret='ssssssssssssss')
 # popular_media = api.media_popular(count=20)
 # for media in popular_media:
 #     print media.images['standard_resolution'].url
